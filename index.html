@@ -236,6 +236,19 @@ h1,h2,h3,h4{margin:0;line-height:1.1;text-wrap:balance}
 .proj .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:4px}
 .proj .foot a{font:700 14px/1 var(--sans);color:var(--blue);text-decoration:none}
 .proj .foot a:hover{text-decoration:underline}
+.live-head{margin:56px 0 20px}
+.live-head h3{font:800 clamp(22px,2.4vw,28px)/1.2 var(--sans);color:var(--navy)}
+.live-head p{margin:6px 0 0;color:var(--muted)}
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.lc{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(15,26,58,.05);transition:transform .2s,box-shadow .2s}
+.lc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.lc-top{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#F1F2F5;border-bottom:3px solid var(--lcol)}
+.lc-top .dots i{width:8px;height:8px}
+.lc-url{font:500 11.5px/1 var(--mono);color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.lc-body{display:flex;flex-direction:column;gap:10px;padding:16px;flex:1}
+.lc-body h4{font:800 17px/1.3 var(--sans);color:var(--navy)}
+.lc-body p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.55}
+.lc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
 
 /* ---------- CERTIFICATES ---------- */
 .feat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
@@ -557,7 +570,7 @@ tr.dt p{margin:0 0 6px}
         <div class="stat" role="listitem"><b data-n="3.64" data-d="2">3,64</b><span>IPK S1 Informatika</span></div>
         <div class="stat" role="listitem"><b data-n="36">36</b><span>Sertifikat</span></div>
         <div class="stat" role="listitem"><b data-n="2">2</b><span>Program AI nasional</span></div>
-        <div class="stat" role="listitem"><b data-n="4">4</b><span>Repo GitHub</span></div>
+        <div class="stat" role="listitem"><b data-n="15">15</b><span>Repo GitHub</span></div>
       </div>
       <div class="edu">
         <h3>Pendidikan</h3>
@@ -650,6 +663,50 @@ tr.dt p{margin:0 0 6px}
           <div class="foot"><span></span><a href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Lihat repo ↗</a></div>
         </div>
       </article>
+    </div>
+
+    <div class="live-head"><h3>Website Live</h3><p>Semua website yang pernah saya buat, bisa dibuka langsung.</p></div>
+    <div class="lgrid">
+      <article class="lc" style="--lcol:#E5246E"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">luna-run-games.vercel.app</span></div>
+        <div class="lc-body"><h4>Luna Run &amp; Mini Games</h4><p>Game Luna Run (kabur dari alien), Jagoan Cibinong, Solver Rubik 3x3, dan Botol Minum 3D.</p>
+        <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#0F1A3A">Canvas</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://luna-run-games.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/luna-run-games" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#2148D8"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">story-app-pwa.vercel.app</span></div>
+        <div class="lc-body"><h4>Story App (PWA)</h4><p>Aplikasi berbagi cerita dengan peta Leaflet, IndexedDB, dan mode offline. Submission Dicoding.</p>
+        <div class="langs"><span style="--lc:#6D5BD0">Vite</span><span style="--lc:#18A058">Leaflet</span><span style="--lc:#0EA5A4">PWA</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://story-app-pwa.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/story-app-pwa" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#F2B33D"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">notes-app-naufal.vercel.app</span></div>
+        <div class="lc-body"><h4>Notes App</h4><p>Aplikasi catatan dengan Web Components dan Webpack, terhubung ke Dicoding Notes API.</p>
+        <div class="langs"><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#2148D8">Webpack</span><span style="--lc:#E0532F">REST API</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://notes-app-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/notes-app-final" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#18A058"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">bookshelf-naufal.vercel.app</span></div>
+        <div class="lc-body"><h4>Bookshelf App</h4><p>Rak buku digital: tambah, cari, pindahkan, dan hapus buku dengan localStorage. Submission Dicoding.</p>
+        <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://bookshelf-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/bookshelf-app" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#0EA5A4"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">user-management-naufal.vercel.app</span></div>
+        <div class="lc-body"><h4>User Management</h4><p>Aplikasi manajemen pengguna dengan React Router. Tugas Praktikum Pemrograman Web.</p>
+        <div class="langs"><span style="--lc:#0EA5A4">React</span><span style="--lc:#6D5BD0">Vite</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://user-management-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/user-management-react" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#E0532F"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">rumah-sakit-naufal.vercel.app</span></div>
+        <div class="lc-body"><h4>Website Rumah Sakit</h4><p>Situs rumah sakit dengan halaman dokter, perawatan, dan kontak, plus panel admin PHP.</p>
+        <div class="langs"><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#2148D8">Bootstrap</span><span style="--lc:#C0392B">MySQL</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://rumah-sakit-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/rumah-sakit-web" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#0B2A6B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">kumpulan-tugas-web.vercel.app</span></div>
+        <div class="lc-body"><h4>Kumpulan Tugas Web</h4><p>14 latihan dari kuliah dan Dicoding: notes app, biodata, layout, dan workshop JavaScript.</p>
+        <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://kumpulan-tugas-web.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/kumpulan-tugas-web" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#C0392B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div>
+        <div class="lc-body"><h4>Dapur Bunda Bahagia</h4><p>Website katering dengan panel admin untuk produk, stok, pesanan, dan laporan.</p>
+        <div class="langs"><span style="--lc:#18A058">Express</span><span style="--lc:#C0392B">MySQL</span></div>
+        <div class="lc-links"><a class="btn sm" href="https://github.com/naufalfadillahh/dapur-bunda-bahagia" target="_blank" rel="noopener">Lihat kode ↗</a></div></div></article>
+      <article class="lc" style="--lcol:#6D5BD0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div>
+        <div class="lc-body"><h4>CRUD App CodeIgniter</h4><p>Aplikasi CRUD dengan framework CodeIgniter 4 dan database MySQL.</p>
+        <div class="langs"><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#E0532F">CodeIgniter 4</span></div>
+        <div class="lc-links"><a class="btn sm" href="https://github.com/naufalfadillahh/crud-app-codeigniter" target="_blank" rel="noopener">Lihat kode ↗</a></div></div></article>
+      <article class="lc" style="--lcol:#3776AB"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div>
+        <div class="lc-body"><h4>Flask Praktikum</h4><p>Kumpulan aplikasi Flask: biodata, CRUD tabel MySQL, dan Praktikum Pemrograman Jaringan.</p>
+        <div class="langs"><span style="--lc:#3776AB">Python</span><span style="--lc:#0F1A3A">Flask</span></div>
+        <div class="lc-links"><a class="btn sm" href="https://github.com/naufalfadillahh/flask-praktikum" target="_blank" rel="noopener">Lihat kode ↗</a></div></div></article>
     </div>
   </div>
 </section>
