@@ -73,7 +73,7 @@ h1,h2,h3,h4{margin:0;line-height:1.1;text-wrap:balance}
 .ring-text{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite;overflow:visible}
 .orbit-wrap:hover .ring-text{animation-play-state:paused}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ring-text text{font:400 66px var(--blob);fill:#fff;letter-spacing:6px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
+.ring-text text{font:400 46px var(--blob);fill:#fff;letter-spacing:0;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
 .avatar{position:absolute;inset:23%;border-radius:50%;background:rgba(255,255,255,.28);box-shadow:inset 0 0 0 10px rgba(255,255,255,.12),0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden;cursor:zoom-in;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block;transition:transform .6s}
 .avatar:hover{transform:scale(1.03)}
@@ -516,7 +516,7 @@ tr.dt p{margin:0 0 6px}
 @media (max-width:700px){
   .slide{padding-block:64px}
   .hero{padding-top:84px;min-height:0}
-  .ring-text text{font-size:60px}
+  .ring-text text{font-size:46px}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tile.hide-sm{display:none}
   .feat{grid-template-columns:1fr}
@@ -563,7 +563,7 @@ tr.dt p{margin:0 0 6px}
   <div class="cursor-glow" id="glow" aria-hidden="true"></div>
   <div style="position:relative;z-index:2;display:grid;justify-items:center">
     <div class="orbit-wrap" id="orbit">
-      <svg class="ring-text" viewBox="0 0 640 640" aria-hidden="true"><defs><path id="circ" d="M320,320 m-255,0 a255,255 0 1,1 510,0 a255,255 0 1,1 -510,0"/></defs><text><textPath href="#circ" startOffset="0">PORTOFOLIO ✦ PORTOFOLIO ✦</textPath></text></svg>
+      <svg class="ring-text" viewBox="0 0 640 640" aria-hidden="true"><defs><path id="circ" d="M320,320 m-255,0 a255,255 0 1,1 510,0 a255,255 0 1,1 -510,0"/></defs><text textLength="1600" lengthAdjust="spacing"><textPath href="#circ" startOffset="0" textLength="1600" lengthAdjust="spacing">PORTOFOLIO ✦ PORTOFOLIO ✦ PORTOFOLIO ✦</textPath></text></svg>
       <div class="avatar" id="heroPhoto" role="button" tabindex="0" aria-label="Perbesar foto Naufal Fadillah"><img src="profile.webp" alt="Naufal Fadillah mengenakan kemeja batik"></div>
       <span class="tile" data-d="18" style="--i:1;--bg:#3776AB;--s:70px;left:-2%;top:16%;--r:-12deg"><span class="tt">Python</span>Py</span>
       <span class="tile" data-d="26" style="--i:2;--bg:#E8B90F;--s:62px;right:2%;top:6%;--r:10deg"><span class="tt">JavaScript</span>JS</span>
