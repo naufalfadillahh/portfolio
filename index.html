@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portofolio Naufal Fadillah: System Analyst, Front-End Developer, dan Programmer bersertifikat BNSP.">
+<meta property="og:title" content="Naufal Fadillah | Portofolio">
+<meta property="og:description" content="System Analyst, Front-End Developer, dan Programmer bersertifikat BNSP.">
+<meta property="og:image" content="profile.webp">
+<link rel="icon" href="profile.webp">
+<title>Naufal Fadillah | Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Unbounded:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: creative-portfolio deck — vivid mesh-gradient hero with the word PORTOFOLIO orbiting a round portrait,
+   then light grid-paper "slides": intro with window cards, experience list, tool expertise, projects, certificates, CV, contact.
+   Single deliberate light look (explicit colors, no dark variant). */
+:root{
+  color-scheme:light;
+  --paper:#F4F5F7; --grid:rgba(17,24,52,.06); --white:#FFFFFF; --ink:#0F1A3A; --ink-2:#2E3756; --muted:#646C86; --line:#E1E4EC;
+  --navy:#0F1A3A; --blue:#2148D8; --hl:#F7E733; --hire:#2148D8;
+  --c-pro:#2148D8; --c-prog:#0EA5A4; --c-biz:#E0532F; --ok:#18A058;
+  --mesh1:#E5246E; --mesh2:#16C0B0; --mesh3:#0B2A6B; --mesh4:#F2B33D;
+  --shadow:0 2px 4px rgba(15,26,58,.06), 0 18px 40px -20px rgba(15,26,58,.35);
+  --wide:"Unbounded","Arial Black",system-ui,sans-serif;
+  --blob:"Bagel Fat One","Arial Rounded MT Bold","Arial Black",system-ui,sans-serif;
+  --sans:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:70;background:var(--navy)}
+.gut{padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1160px;margin:0 auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--hl);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{margin:0;line-height:1.1;text-wrap:balance}
+.gridbg{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:56px 56px}
+
+/* ---------- Header ---------- */
+.header{position:fixed;top:env(safe-area-inset-top, 0px);left:0;right:0;z-index:60;transition:background .3s,box-shadow .3s}
+.header.solid{background:rgba(15,26,58,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.header .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;font:700 15px/1.1 var(--sans);white-space:nowrap}
+.brand img{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 25%;border:2px solid #fff}
+.nav{display:flex;gap:4px;margin-left:auto;padding:4px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.nav a{padding:8px 13px;border-radius:999px;font:600 13.5px/1 var(--sans);color:rgba(255,255,255,.82);text-decoration:none;transition:background .2s,color .2s}
+.nav a:hover{color:#fff;background:rgba(255,255,255,.14)}
+.nav a.active{background:#fff;color:var(--navy)}
+.hd-cta{font:700 13px/1 var(--sans);padding:11px 16px;border-radius:999px;background:var(--hl);color:var(--navy);text-decoration:none;white-space:nowrap;transition:transform .15s}
+.hd-cta:hover{transform:translateY(-2px)}
+.tabbar{display:none}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;background:var(--mesh3);min-height:min(900px,100vh);display:grid;place-items:center;padding:100px 0 60px}
+.mesh{position:absolute;inset:-20%;filter:blur(70px);opacity:.95}
+.mesh i{position:absolute;border-radius:50%}
+.mesh .m1{width:55%;height:70%;left:-5%;top:20%;background:var(--mesh1);animation:m1 22s ease-in-out infinite alternate}
+.mesh .m2{width:55%;height:60%;left:30%;top:-5%;background:var(--mesh2);animation:m2 26s ease-in-out infinite alternate}
+.mesh .m3{width:50%;height:60%;right:-10%;top:35%;background:#1C3FAA;animation:m3 30s ease-in-out infinite alternate}
+.mesh .m4{width:40%;height:45%;left:5%;bottom:-15%;background:var(--mesh4);animation:m1 28s ease-in-out infinite alternate-reverse}
+@keyframes m1{to{transform:translate(10%,-8%) scale(1.1)}}
+@keyframes m2{to{transform:translate(-8%,10%) scale(.92)}}
+@keyframes m3{to{transform:translate(-12%,-6%) scale(1.08)}}
+.hero .gridbg{position:absolute;inset:0;--grid:rgba(255,255,255,.14);background-size:72px 72px;-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 40%,transparent 85%);mask-image:radial-gradient(ellipse at 50% 45%,#000 40%,transparent 85%)}
+.cursor-glow{position:absolute;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.22),transparent);pointer-events:none;transform:translate(var(--gx,50%),var(--gy,40%));opacity:0;transition:opacity .4s}
+.hero:hover .cursor-glow{opacity:1}
+.orbit-wrap{position:relative;width:min(640px,94vw);aspect-ratio:1;max-width:100%}
+.ring-text{position:absolute;inset:0;width:100%;height:100%;animation:spin 40s linear infinite;overflow:visible}
+.orbit-wrap:hover .ring-text{animation-play-state:paused}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring-text text{font:400 66px var(--blob);fill:#fff;letter-spacing:6px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
+.avatar{position:absolute;inset:23%;border-radius:50%;background:rgba(255,255,255,.28);box-shadow:inset 0 0 0 10px rgba(255,255,255,.12),0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden;cursor:zoom-in;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;display:block;transition:transform .6s}
+.avatar:hover{transform:scale(1.03)}
+.avatar:hover img{transform:scale(1.08)}
+.tile{position:absolute;z-index:3;display:grid;place-items:center;width:var(--s,64px);height:var(--s,64px);border-radius:calc(var(--s,64px)*.24);font:800 calc(var(--s,64px)*.32)/1 var(--wide);letter-spacing:-.02em;color:#fff;background:var(--bg);box-shadow:0 14px 30px -10px rgba(0,0,0,.45),inset 0 -4px 0 rgba(0,0,0,.15);transform:translate(var(--px,0),var(--py,0)) rotate(var(--r,0deg));transition:transform .25s ease-out;cursor:default;user-select:none}
+.tile.far{filter:blur(3px);opacity:.75;z-index:1}
+.tile:hover{transform:translate(var(--px,0),var(--py,0)) rotate(0deg) scale(1.12)}
+.tile .tt{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);white-space:nowrap;font:600 11.5px/1 var(--sans);letter-spacing:0;color:var(--navy);background:#fff;padding:6px 8px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s}
+.tile:hover .tt{opacity:1}
+@media (prefers-reduced-motion:no-preference){.tile .bob{animation:bob 5s ease-in-out infinite}}
+.hero-foot{position:relative;z-index:4;text-align:center;margin-top:18px}
+.hero-foot .hero-tag{font:600 clamp(13px,1.6vw,18px)/1.4 var(--wide);letter-spacing:.32em;text-transform:uppercase}
+.hero-foot .cta{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pill-btn{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 var(--sans);padding:13px 20px;border-radius:999px;text-decoration:none;border:2px solid #fff;color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.pill-btn:hover{transform:translateY(-2px);background:#fff;color:var(--navy)}
+.pill-btn.y{background:var(--hl);border-color:var(--hl);color:var(--navy)}
+.pill-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.scroll-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);font:500 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;opacity:.7;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint i{width:2px;height:28px;background:linear-gradient(#fff,transparent);animation:drop 1.8s ease-in-out infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Common slide pieces ---------- */
+.slide{position:relative;padding-block:96px}
+.tape{height:18px;background:repeating-linear-gradient(-45deg,#111 0 16px,var(--hl) 16px 32px)}
+.kicker{display:inline-block;font:700 13px/1 var(--sans);background:var(--hl);color:var(--navy);padding:6px 9px}
+.block{display:inline;font:800 clamp(28px,4.6vw,54px)/1.28 var(--wide);text-transform:uppercase;letter-spacing:.01em;color:#fff;background:var(--navy);padding:.02em .25em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.block.plain{background:none;color:var(--navy);padding:0}
+.s-head{margin-bottom:44px;display:grid;gap:14px;justify-items:start}
+.s-head .sub{color:var(--muted);max-width:60ch;margin:6px 0 0}
+.win{background:var(--white);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid var(--line)}
+.win-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;background:#F1F2F5;border-bottom:1px solid var(--line)}
+.win-bar h3{font:700 clamp(17px,1.8vw,21px)/1.25 var(--sans)}
+.dots{display:flex;gap:6px;flex:none}
+.dots i{width:11px;height:11px;border-radius:50%}
+.dots i:nth-child(1){background:#22C55E}.dots i:nth-child(2){background:#FACC15}.dots i:nth-child(3){background:#EF4444}
+.win-body{padding:22px 24px}
+.sticker{display:inline-block;font:400 22px/1 var(--blob);color:#fff;background:var(--hire);padding:10px 16px;border-radius:12px;transform:rotate(-8deg);box-shadow:0 10px 20px -8px rgba(33,72,216,.6);text-decoration:none;transition:transform .2s}
+.sticker:hover{transform:rotate(4deg) scale(1.08)}
+.reveal{transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.pending{opacity:.001;transform:translateY(22px)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 var(--sans);padding:12px 18px;border-radius:12px;border:2px solid var(--navy);background:var(--white);color:var(--navy);text-decoration:none;cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px);background:var(--navy);color:#fff}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.dark:hover{background:var(--blue);border-color:var(--blue)}
+.btn.sm{padding:9px 13px;font-size:13px;border-radius:10px}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- INTRO ---------- */
+.intro{background:linear-gradient(135deg,#D7EEF0 0%,#EDE4F7 50%,#FBE3EC 100%)}
+.intro-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:36px;align-items:start}
+.hello{font:600 clamp(30px,4vw,46px)/1.1 var(--sans);color:var(--navy);display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.hello .wave{display:inline-grid;place-items:center;width:1.2em;height:1.2em;border-radius:50%;background:var(--hl);font-size:.7em;transform-origin:70% 70%}
+.hello:hover .wave{animation:wave 1s ease-in-out}
+@keyframes wave{20%,60%{transform:rotate(16deg)}40%,80%{transform:rotate(-10deg)}}
+.intro .block{font-size:clamp(30px,5vw,60px)}
+.about-card{margin-top:28px}
+.about-card p{margin:0 0 14px;color:var(--ink-2);font-size:16.5px;line-height:1.7}
+.about-card p:last-child{margin:0}
+.edu{margin-top:34px}
+.edu h3{font:800 26px/1 var(--sans);color:var(--navy);margin-bottom:14px}
+.edu-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-bottom:10px}
+.edu-row b{font-size:17px}
+.yr{font:700 12px/1 var(--sans);background:var(--white);border:1px solid var(--line);padding:6px 9px;border-radius:999px}
+.edu-row .sub{flex-basis:100%;display:flex;align-items:center;gap:8px;color:var(--ink-2);margin-top:-2px}
+.edu-row .sub::before{content:"";width:7px;height:7px;border-radius:50%;background:#F472B6}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:30px}
+.stat{background:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.9);border-radius:14px;padding:16px}
+.stat b{display:block;font:800 26px/1 var(--wide);color:var(--navy);font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:8px}
+.photo-card{position:relative;background:var(--white);border-radius:26px;padding:18px 18px 12px;box-shadow:var(--shadow);transform:rotate(1.5deg);transition:transform .4s}
+.photo-card:hover{transform:rotate(0)}
+.photo-card .clip{position:absolute;top:-26px;left:50%;width:54px;height:44px;margin-left:-27px;border:5px solid #2B2F3A;border-bottom:none;border-radius:14px 14px 0 0}
+.photo-card .clip::after{content:"";position:absolute;left:-12px;right:-12px;bottom:-10px;height:16px;background:#2B2F3A;border-radius:4px}
+.photo-card .ph{border-radius:16px;overflow:hidden;aspect-ratio:4/5;max-width:100%;cursor:zoom-in;background:#E5E7EB}
+.photo-card img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;transition:transform .6s}
+.photo-card .ph:hover img{transform:scale(1.05)}
+.photo-card .url{text-align:center;font:500 12.5px/1 var(--sans);color:var(--ink-2);padding-top:12px}
+.contact-card{position:relative;margin-top:28px}
+.c-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.c-list a,.c-list button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;align-items:center;gap:12px;padding:9px 10px;margin-inline:-10px;border-radius:10px;font-size:15.5px;transition:background .15s}
+.c-list a:hover,.c-list button:hover{background:#EEF2FF}
+.c-list a:focus-visible,.c-list button:focus-visible{outline:2px solid var(--blue)}
+.c-list .ic{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;flex:none}
+.c-list .ic svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.c-list .hint{margin-left:auto;font:500 11.5px/1 var(--sans);color:var(--muted);opacity:0;transition:opacity .15s}
+.c-list a:hover .hint,.c-list button:hover .hint{opacity:1}
+.contact-card{overflow:visible}
+.contact-card .win-bar{border-radius:18px 18px 0 0}
+.contact-card .sticker{position:absolute;right:-12px;bottom:-22px;z-index:2;font-size:19px}
+
+/* ---------- EXPERIENCE ---------- */
+.exp-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:700 13px/1 var(--sans);padding:9px 14px;border-radius:999px;border:2px solid var(--navy);background:var(--white);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .15s,color .15s}
+.chip:hover{background:#E8ECFA}
+.chip[aria-pressed="true"]{background:var(--navy);color:#fff}
+.chip .n{font:500 11px/1 var(--mono);opacity:.7}
+.sw{display:inline-block;width:9px;height:9px;border-radius:50%}
+.exp-list{display:grid;gap:4px}
+.ex{border-radius:16px;transition:background .3s}
+.ex.flash{background:#FFF7B8}
+.ex-btn{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:18px 18px;border-radius:16px;transition:background .2s}
+.ex-btn:hover{background:rgba(255,255,255,.8)}
+.ex-btn:focus-visible{outline:2px solid var(--blue)}
+.ex-btn h3{font:800 clamp(19px,2vw,23px)/1.25 var(--sans);color:var(--navy);display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.ex-btn h3 small{font:600 13px/1 var(--sans);color:var(--ink-2)}
+.ex-btn .bul{grid-column:1;display:flex;align-items:baseline;gap:9px;color:var(--ink-2);font-size:15.5px}
+.ex-btn .bul::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);flex:none;transform:translateY(-1px)}
+.now{font:700 10.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--ok);padding:4px 7px;border-radius:5px;align-self:center}
+.ex .plus{grid-row:1/3;grid-column:2;align-self:center;width:36px;height:36px;border-radius:50%;border:2px solid var(--navy);display:grid;place-items:center;transition:transform .3s,background .2s,color .2s}
+.ex .plus svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round}
+.ex[data-open="true"] .plus{transform:rotate(45deg);background:var(--navy);color:#fff}
+.ex-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)}
+.ex[data-open="true"] .ex-body{grid-template-rows:1fr}
+.ex-body>div{overflow:hidden}
+.ex-inner{padding:0 18px 20px 35px;color:var(--ink-2);font-size:15px}
+.ex-inner .meta{font:500 13px/1.5 var(--mono);color:var(--muted);margin-bottom:8px}
+.ex-inner p{margin:0 0 8px;max-width:64ch}
+.ex-inner h4{font:700 15px/1.3 var(--sans);color:var(--navy);margin:12px 0 2px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.tag{font:600 12px/1 var(--sans);padding:6px 9px;border-radius:6px;background:var(--white);border:1px solid var(--line)}
+.gallery{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.thumb{width:96px;height:72px;border-radius:10px;overflow:hidden;border:2px solid var(--white);box-shadow:0 6px 14px -6px rgba(0,0,0,.35);background:#DDE1EA;cursor:zoom-in;padding:0;flex:none;transition:transform .2s}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb:hover{transform:translateY(-3px) rotate(-2deg)}
+
+/* ---------- TOOLS ---------- */
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 56px}
+.tcat h3{font:800 clamp(22px,2.4vw,28px)/1.2 var(--sans);color:var(--navy);margin-bottom:20px}
+.tlist{display:grid;gap:8px}
+.tool{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;align-items:start;padding:12px;margin-inline:-12px;border-radius:14px;transition:background .2s,transform .2s}
+.tool:hover{background:var(--white);transform:translateX(4px);box-shadow:var(--shadow)}
+.tool:focus-visible{outline:2px solid var(--blue)}
+.tool .ti{width:52px;height:52px;border-radius:12px;background:var(--bg);color:var(--fg,#fff);display:grid;place-items:center;font:800 15px/1 var(--wide);letter-spacing:-.03em;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}
+.tool b{display:block;font:700 17px/1.3 var(--sans);color:var(--navy)}
+.tool p{margin:3px 0 0;font-size:14px;color:var(--ink-2);line-height:1.55}
+.tool .ev{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font:600 12px/1 var(--sans);color:var(--blue)}
+.tool .ev::after{content:"→";transition:transform .2s}
+.tool:hover .ev::after{transform:translateX(3px)}
+.tool .ev.none{color:var(--muted)}
+.tool .ev.none::after{content:""}
+
+/* ---------- PROJECTS ---------- */
+.projects{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px}
+.proj .win-body{display:grid;gap:14px}
+.proj .meta{display:flex;flex-wrap:wrap;gap:8px 14px;font:500 12.5px/1.4 var(--mono);color:var(--muted)}
+.proj p{margin:0;color:var(--ink-2)}
+.rtabs{display:flex;gap:6px;flex-wrap:wrap}
+.rtabs button{font:500 12.5px/1 var(--mono);padding:8px 11px;border-radius:8px;border:1px solid var(--line);background:#F6F7FA;cursor:pointer;color:var(--ink-2)}
+.rtabs button[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.code{background:#0F1A3A;color:#C9D4F5;border-radius:12px;padding:14px 16px;font:400 12.5px/1.9 var(--mono);overflow-x:auto}
+.code .d{color:#F7E733}.code .d::before{content:"▸ "}
+.code .f::before{content:"  · ";color:#6B7AAE}
+.code .c{color:#7E8BB8}
+.langs{display:flex;flex-wrap:wrap;gap:6px}
+.langs span{font:700 12px/1 var(--sans);padding:7px 10px;border-radius:999px;background:var(--lc);color:#fff}
+.crud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.crud div{padding:12px;border-radius:12px;background:#F6F7FA;border:1px solid var(--line);font:500 12.5px/1.4 var(--mono)}
+.crud b{display:block;font:800 12px/1 var(--wide);color:var(--blue);margin-bottom:6px;text-transform:uppercase}
+.proj .foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:4px}
+.proj .foot a{font:700 14px/1 var(--sans);color:var(--blue);text-decoration:none}
+.proj .foot a:hover{text-decoration:underline}
+
+/* ---------- CERTIFICATES ---------- */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center}
+.feat .badge{display:inline-block;font:800 11px/1 var(--wide);letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--hl);padding:7px 10px}
+.feat h3{font:800 clamp(24px,2.8vw,32px)/1.15 var(--sans);color:var(--navy);margin-top:12px}
+.feat .rows{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:14px 0 0;font-size:14.5px}
+.feat dt{color:var(--muted)}
+.feat dd{margin:0;font-weight:600;color:var(--ink-2)}
+.duo{display:flex;gap:12px}
+.duo button{width:130px;aspect-ratio:585/840;padding:0;border:3px solid var(--white);border-radius:8px;overflow:hidden;cursor:zoom-in;background:#fff;box-shadow:var(--shadow);transition:transform .3s}
+.duo button:first-child{transform:rotate(-4deg)}.duo button:last-child{transform:rotate(3deg) translateY(8px)}
+.duo button:hover{transform:rotate(0) scale(1.06)}
+.duo img{width:100%;height:100%;object-fit:cover;display:block}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:34px 0 14px}
+.search{flex:1 1 220px;min-width:0;display:flex;align-items:center;gap:8px;border:2px solid var(--navy);background:var(--white);border-radius:999px;padding:0 14px;height:44px}
+.search svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:2.2;flex:none}
+.search input{border:0;background:transparent;outline:0;width:100%;font:500 14px/1 var(--sans);color:var(--ink)}
+.select{height:44px;padding:0 14px;border-radius:999px;border:2px solid var(--navy);background:var(--white);color:var(--navy);font:700 13.5px/1 var(--sans);cursor:pointer}
+.count{font:500 13px/1 var(--mono);color:var(--muted);margin:0 0 22px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.cc{display:flex;flex-direction:column;text-align:left;padding:0;border:1px solid var(--line);border-radius:16px;background:var(--white);overflow:hidden;cursor:zoom-in;box-shadow:0 1px 2px rgba(15,26,58,.05);transition:transform .2s,box-shadow .2s}
+.cc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cc .bar{display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:#F1F2F5;border-bottom:1px solid var(--line);font:700 11.5px/1 var(--sans);color:var(--ink-2)}
+.cc .bar .dots i{width:8px;height:8px}
+.cc .im{display:block;aspect-ratio:4/3;max-width:100%;overflow:hidden;background:#fff}
+.cc .im img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;transition:transform .5s}
+.cc:hover .im img{transform:scale(1.05)}
+.cc .t{padding:12px 14px 4px;font:700 14.5px/1.4 var(--sans);color:var(--navy)}
+.cc .dt{padding:0 14px 14px;font:500 12px/1.4 var(--mono);color:var(--muted);margin-top:auto}
+.empty{color:var(--muted);padding:20px 0}
+
+/* ---------- CV ---------- */
+.cv-wrap{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:28px;align-items:start}
+.cv-side{display:grid;gap:16px;position:sticky;top:84px}
+.seg{display:flex;padding:4px;border-radius:999px;background:#E6E8EF;gap:4px}
+.seg button{flex:1;border:0;background:transparent;padding:9px 12px;border-radius:999px;font:700 13px/1 var(--sans);color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cv-side .win-body{display:grid;gap:10px}
+.cv-side p{margin:0;font-size:14px;color:var(--ink-2)}
+.cv-side .btn{justify-content:center}
+.doc{display:grid;grid-template-columns:230px minmax(0,1fr);background:#fff;border-radius:6px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.d-side{background:var(--navy);color:#E6EBF8;padding:28px 20px;display:flex;flex-direction:column;gap:20px}
+.d-side img{width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:50% 28%;border:3px solid #fff;margin:0 auto;display:block}
+.d-h{font:800 10px/1 var(--wide);letter-spacing:.12em;text-transform:uppercase;color:var(--hl);margin-bottom:10px}
+.d-side ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:13px}
+.d-side .k{display:block;color:#9CA6C8;font-size:11px}
+.d-side a{color:#E6EBF8}
+.d-chips{display:flex;flex-wrap:wrap;gap:5px}
+.d-chips span{font:600 11px/1 var(--sans);padding:6px 8px;border-radius:5px;border:1px solid #33416E}
+.d-main{padding:30px 32px;min-width:0}
+.d-main h3{font:800 28px/1.1 var(--sans);color:var(--navy)}
+.d-main .r{font-weight:700;color:var(--blue);margin-top:6px;font-size:14px}
+.d-main .sum{font-size:14px;color:var(--ink-2);margin:12px 0 0;line-height:1.65}
+.d-sec{font:800 10.5px/1 var(--wide);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:22px 0 8px;padding-bottom:8px;border-bottom:2px solid var(--hl)}
+.d-item{all:unset;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 12px;width:calc(100% + 16px);padding:7px 8px;margin-inline:-8px;border-radius:6px;cursor:pointer;font-size:14px;color:var(--navy);transition:background .15s}
+.d-item:hover{background:#FFF9C9}
+.d-item:focus-visible{outline:2px solid var(--blue)}
+.d-item b{font-weight:600}
+.d-item .d{font:400 12px/1.6 var(--mono);color:var(--muted);white-space:nowrap}
+.d-item .o{grid-column:1/-1;color:var(--muted);font-size:13px}
+.doc.ringkas .more{display:none}
+
+/* ---------- CONTACT ---------- */
+.contact{position:relative;overflow:hidden;color:#fff;background:var(--mesh3)}
+.contact .mesh{opacity:.85}
+.contact .wrap{position:relative;z-index:2}
+.contact .block{background:#fff;color:var(--navy)}
+.contact .kicker{background:var(--hl)}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch}
+.c-big{display:flex;flex-direction:column;gap:16px;justify-content:center}
+.c-big p{margin:0;font-size:18px;color:rgba(255,255,255,.88);max-width:42ch}
+.c-big .mail{all:unset;cursor:copy;font:800 clamp(18px,2.6vw,28px)/1.2 var(--wide);word-break:break-all;border-bottom:3px solid var(--hl);align-self:flex-start;padding-bottom:4px}
+.c-big .mail:hover{color:var(--hl)}
+.c-big .mail:focus-visible{outline:3px solid var(--hl)}
+.c-big .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.links{display:grid;gap:10px}
+.lk{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);text-decoration:none;color:#fff;cursor:pointer;width:100%;text-align:left;transition:background .2s,transform .2s}
+.lk:hover{background:rgba(255,255,255,.22);transform:translateX(4px)}
+.lk .ic{width:40px;height:40px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;flex:none}
+.lk .ic svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lk b{display:block;font-size:15px}
+.lk span{font-size:13.5px;opacity:.8}
+.lk .arr{margin-left:auto;opacity:.75}
+footer{background:var(--navy);color:rgba(255,255,255,.75);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-block:22px}
+footer .ft-id{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700}
+footer .ft-id img{width:30px;height:30px;border-radius:50%;object-fit:cover;object-position:50% 25%}
+footer button{all:unset;cursor:pointer;font-weight:700;color:var(--hl)}
+footer button:focus-visible{outline:2px solid var(--hl)}
+
+/* ---------- Lightbox + toast ---------- */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(9,13,32,.94);display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:calc(14px + env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px));color:#fff}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font:400 13px/1 var(--mono);color:#C9D1E0}
+.lb-stage{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:14px;min-height:0;padding-block:14px}
+.lb-stage figure{margin:0;height:100%;min-height:0;display:grid;place-items:center}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;background:#fff}
+.lb-btn{width:46px;height:46px;border-radius:50%;border:2px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-size:18px;display:grid;place-items:center}
+.lb-btn:hover{background:#fff;color:var(--navy)}
+.lb-cap{text-align:center;max-width:70ch;margin:0 auto}
+.lb-cap h4{font:700 18px/1.3 var(--sans);color:#fff}
+.lb-cap p{margin:6px 0 0;font:400 12.5px/1.5 var(--mono);color:#C9D1E0}
+.toast{position:fixed;z-index:95;left:50%;bottom:calc(26px + env(safe-area-inset-bottom, 0px));transform:translateX(-50%);background:var(--navy);color:#fff;padding:12px 16px;border-radius:12px;font:600 14px/1.3 var(--sans);border:2px solid var(--hl)}
+
+
+/* ---------- Motion layer ---------- */
+.progress{position:fixed;left:0;top:env(safe-area-inset-top, 0px);height:3px;width:100%;z-index:80;background:linear-gradient(90deg,#E5246E,#F7E733,#16C0B0,#2148D8);transform-origin:0 50%;transform:scaleX(0)}
+@media (prefers-reduced-motion:no-preference){
+  .avatar{animation:popIn .9s cubic-bezier(.2,1.3,.4,1) both}
+  .ring-text{animation:ringIn 1.2s cubic-bezier(.2,.7,.2,1) both, spin 40s linear 1.2s infinite}
+  .orbit-wrap .tile{animation:tileIn .7s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(.35s + var(--i,0) * .09s)}
+  .hero-tag{animation:fadeUp .8s .9s both}
+  .hero-foot .cta>*{animation:fadeUp .7s both}
+  .hero-foot .cta>*:nth-child(1){animation-delay:1.05s}.hero-foot .cta>*:nth-child(2){animation-delay:1.15s}.hero-foot .cta>*:nth-child(3){animation-delay:1.25s}
+  .header{animation:dropIn .7s .1s both}
+  .tape{background-size:45.25px 45.25px;animation:tape 1.6s linear infinite}
+  .sticker{animation:wiggle 4s ease-in-out 2s infinite}
+  .hello .wave{animation:wave 1.6s ease-in-out 1s 2}
+  .kicker{position:relative}
+}
+@keyframes popIn{from{transform:scale(.6);opacity:0}}
+@keyframes ringIn{from{opacity:0;transform:rotate(-90deg) scale(.85)}}
+@keyframes tileIn{from{opacity:0;scale:.3}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}}
+@keyframes dropIn{from{opacity:0;transform:translateY(-100%)}}
+@keyframes tape{to{background-position:45.25px 0}}
+@keyframes wiggle{0%,86%,100%{rotate:0deg}89%{rotate:-6deg}92%{rotate:5deg}95%{rotate:-3deg}}
+.tape{background:repeating-linear-gradient(-45deg,#111 0 16px,var(--hl) 16px 32px)}
+/* heading wipe */
+.block.wipe{clip-path:inset(0 100% 0 0);transition:clip-path .8s cubic-bezier(.7,0,.2,1)}
+.block.wipe.in{clip-path:inset(0 0 0 0)}
+.kicker.kslide{transform:translateX(-14px);opacity:.001;transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s}
+.kicker.kslide.in{transform:none;opacity:1}
+/* staggered items */
+.st{transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--k,0) * 70ms)}
+.st.pre{opacity:.001;transform:translateY(18px)}
+/* ticker band */
+.ticker{position:relative;z-index:3;background:var(--navy);color:#fff;overflow:hidden;white-space:nowrap;border-block:3px solid var(--hl);transform:rotate(-1.4deg);margin:-14px -2% 0;width:104%}
+.ticker .row{display:inline-flex;gap:28px;padding:14px 0;animation:mq 34s linear infinite;font:800 clamp(15px,1.8vw,20px)/1 var(--wide);text-transform:uppercase;letter-spacing:.04em}
+.ticker:hover .row{animation-play-state:paused}
+.ticker .row span{display:inline-flex;align-items:center;gap:28px}
+.ticker .row span::after{content:"✦";color:var(--hl)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* tool icon wobble + cert tilt */
+.tool:hover .ti{animation:jelly .6s}
+@keyframes jelly{30%{transform:scale(1.15,.88)}50%{transform:scale(.92,1.08)}70%{transform:scale(1.04,.97)}}
+.cgrid{perspective:1000px}
+.cc{transform-style:preserve-3d}
+.cc.tilt{transition:transform .08s,box-shadow .2s}
+/* magnetic buttons */
+.mag{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .15s,color .15s}
+/* shine on window cards */
+.win{position:relative}
+.win::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,transparent 60%);transform:translateX(-120%);border-radius:inherit}
+.win:hover::after{transform:translateX(120%);transition:transform .9s ease}
+.proj .win-body,.about-card .win-body{position:relative;z-index:1}
+@media (prefers-reduced-motion:reduce){.block.wipe{clip-path:none}.kicker.kslide{opacity:1;transform:none}.st.pre{opacity:1;transform:none}}
+
+
+/* ---------- Tables ---------- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.gpa-l{display:block;margin-top:3px;color:var(--hl)!important;font-weight:700}
+.tbl-wrap{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl thead th{background:var(--navy);color:#fff;text-align:left;font:700 11.5px/1 var(--wide);letter-spacing:.08em;text-transform:uppercase;padding:16px 18px;white-space:nowrap}
+.tbl tbody td{padding:16px 18px;border-top:1px solid var(--line);vertical-align:middle;color:var(--ink-2)}
+.tbl tbody tr.r{cursor:pointer;transition:background .15s}
+.tbl tbody tr.r:hover{background:#F5F7FD}
+.tbl tbody tr.r:nth-child(4n+1){background:#FBFBFD}
+.tbl tbody tr.r:nth-child(4n+1):hover{background:#F5F7FD}
+.tbl .per{font:600 13px/1.4 var(--mono);color:var(--ink);white-space:nowrap}
+.tbl .org{font:800 15.5px/1.3 var(--sans);color:var(--navy)}
+.tbl .pos{font-weight:600;color:var(--ink)}
+.tbl .loc{color:var(--muted);font-size:13.5px;white-space:nowrap}
+.cat{display:inline-flex;align-items:center;gap:7px;font:700 12px/1 var(--sans);padding:6px 10px;border-radius:999px;background:color-mix(in srgb, var(--c) 12%, #fff);color:var(--c);white-space:nowrap}
+.cat::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.tbl .now{margin-left:8px;vertical-align:2px}
+.tog{width:34px;height:34px;border-radius:50%;border:2px solid var(--navy);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .3s,background .2s,color .2s;margin-left:auto}
+.tog svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
+tr.r[data-open="true"] .tog{transform:rotate(45deg);background:var(--navy);color:#fff}
+tr.r[data-open="true"]{background:#EEF2FF!important}
+tr.r.flash{background:#FFF7B8!important}
+tr.dt>td{padding:0;border-top:0}
+tr.dt .dbox{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)}
+tr.dt[data-open="true"] .dbox{grid-template-rows:1fr}
+tr.dt .dbox>div{overflow:hidden}
+tr.dt .din{padding:4px 18px 20px 18px;margin-left:calc(18px);border-left:3px solid var(--c);background:#F8F9FD;margin:0 18px 16px;border-radius:0 12px 12px 0;padding:14px 18px}
+tr.dt h4{font:700 14px/1.3 var(--sans);color:var(--navy);margin:10px 0 2px}
+tr.dt h4:first-child{margin-top:0}
+tr.dt p{margin:0 0 6px}
+.tool-tbl .sk{display:flex;align-items:center;gap:12px;font:700 15px/1.3 var(--sans);color:var(--navy);white-space:nowrap}
+.tool-tbl .ti{width:40px;height:40px;border-radius:10px;background:var(--bg);color:var(--fg,#fff);display:grid;place-items:center;font:800 12px/1 var(--wide);letter-spacing:-.03em;flex:none;box-shadow:inset 0 -3px 0 rgba(0,0,0,.15)}
+.tool-tbl tr.r:hover .ti{animation:jelly .6s}
+.tool-tbl tr.grp td{background:#EEF1F8;font:800 11px/1 var(--wide);letter-spacing:.1em;text-transform:uppercase;color:var(--navy);padding:12px 18px}
+.ev-btn{display:inline-flex;align-items:center;gap:6px;font:700 12.5px/1 var(--sans);padding:8px 12px;border-radius:999px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.ev-btn:hover{background:var(--navy);color:#fff}
+.ev-none{font-size:12.5px;color:var(--muted);white-space:nowrap}
+@media (max-width:860px){
+  .tbl thead{display:none}
+  .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+  .tbl tbody tr.r{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:16px;border-top:1px solid var(--line)}
+  .tbl tbody tr.r td{padding:0;border:0}
+  .exp-tbl tr.r td.c-org{grid-column:1;order:1}
+  .exp-tbl tr.r td.c-tog{grid-column:2;grid-row:1/3;order:2}
+  .exp-tbl tr.r td.c-pos{grid-column:1;order:3}
+  .exp-tbl tr.r td.c-per{grid-column:1/-1;order:4}
+  .exp-tbl tr.r td.c-cat{grid-column:1/-1;order:5;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .exp-tbl tr.r td.c-loc{display:none}
+  .exp-tbl td.c-cat .loc2{display:inline;color:var(--muted);font-size:13px}
+  .tool-tbl tr.r{grid-template-columns:minmax(0,1fr)!important}
+  .tool-tbl td.c-cat{display:none!important}
+  .tool-tbl tr.grp td{padding:12px 16px}
+  tr.dt .din{margin:0 12px 14px}
+}
+@media (min-width:861px){.loc2{display:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){
+  .nav,.hd-cta{display:none}
+  .tabbar{display:flex;position:fixed;z-index:60;left:0;right:0;bottom:0;justify-content:space-around;background:rgba(15,26,58,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:6px max(6px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(6px, env(safe-area-inset-left, 0px))}
+  .tabbar a{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;text-decoration:none;font:600 10.5px/1 var(--sans);color:rgba(255,255,255,.7);border-radius:10px}
+  .tabbar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .tabbar a.active{color:var(--hl)}
+  body{padding-bottom:66px}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom, 0px))}
+  .intro-grid,.projects,.c-grid,.cv-wrap{grid-template-columns:1fr}
+  .intro-side{max-width:440px;width:100%;justify-self:center}
+  .cv-side{position:static;order:-1}
+  .tools-grid{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .slide{padding-block:64px}
+  .hero{padding-top:84px;min-height:0}
+  .ring-text text{font-size:60px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile.hide-sm{display:none}
+  .feat{grid-template-columns:1fr}
+  .duo button{width:calc(50% - 6px)}
+  .cgrid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .doc{grid-template-columns:1fr}
+  .d-main{padding:22px 18px}
+  .crud{grid-template-columns:1fr}
+  .lb-stage{grid-template-columns:minmax(0,1fr)}
+  .lb-stage .lb-btn{display:none}
+  .contact-card .sticker{right:6px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal.pending{opacity:1;transform:none}}
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="header gut" id="header">
+  <div class="wrap">
+    <a class="brand" href="#beranda"><img src="profile.webp" alt="">Naufal Fadillah</a>
+    <nav class="nav" id="nav" aria-label="Navigasi bagian">
+      <a href="#tentang">Tentang</a><a href="#pengalaman">Pengalaman</a><a href="#keahlian">Keahlian</a><a href="#proyek">Proyek</a><a href="#sertifikasi">Sertifikat</a><a href="#cv">CV</a><a href="#kontak">Kontak</a>
+    </nav>
+    <a class="hd-cta" href="#kontak">Hubungi Saya</a>
+  </div>
+</header>
+<nav class="tabbar" id="tabbar" aria-label="Navigasi bagian">
+  <a href="#beranda" data-s="beranda"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v10H5V11"/></svg>Beranda</a>
+  <a href="#pengalaman" data-s="pengalaman"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>Karier</a>
+  <a href="#keahlian" data-s="keahlian"><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg>Keahlian</a>
+  <a href="#sertifikasi" data-s="sertifikasi"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg>Sertifikat</a>
+  <a href="#cv" data-s="cv"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h8M9 17h6"/></svg>CV</a>
+  <a href="#kontak" data-s="kontak"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Kontak</a>
+</nav>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero gut" id="beranda" aria-label="Portofolio Naufal Fadillah">
+  <div class="mesh" aria-hidden="true"><i class="m1"></i><i class="m2"></i><i class="m3"></i><i class="m4"></i></div>
+  <div class="gridbg" aria-hidden="true"></div>
+  <div class="cursor-glow" id="glow" aria-hidden="true"></div>
+  <div style="position:relative;z-index:2;display:grid;justify-items:center">
+    <div class="orbit-wrap" id="orbit">
+      <svg class="ring-text" viewBox="0 0 640 640" aria-hidden="true"><defs><path id="circ" d="M320,320 m-255,0 a255,255 0 1,1 510,0 a255,255 0 1,1 -510,0"/></defs><text><textPath href="#circ" startOffset="0">PORTOFOLIO ✦ PORTOFOLIO ✦</textPath></text></svg>
+      <div class="avatar" id="heroPhoto" role="button" tabindex="0" aria-label="Perbesar foto Naufal Fadillah"><img src="profile.webp" alt="Naufal Fadillah mengenakan kemeja batik"></div>
+      <span class="tile" data-d="18" style="--i:1;--bg:#3776AB;--s:70px;left:-2%;top:16%;--r:-12deg"><span class="tt">Python</span>Py</span>
+      <span class="tile" data-d="26" style="--i:2;--bg:#E8B90F;--s:62px;right:2%;top:6%;--r:10deg"><span class="tt">JavaScript</span>JS</span>
+      <span class="tile" data-d="14" style="--i:3;--bg:#6D5BD0;--s:66px;right:-4%;top:52%;--r:8deg"><span class="tt">PHP</span>PHP</span>
+      <span class="tile hide-sm" data-d="22" style="--i:4;--bg:#E2552D;--s:58px;left:6%;bottom:8%;--r:-6deg"><span class="tt">HTML &amp; CSS</span>&lt;/&gt;</span>
+      <span class="tile" data-d="30" style="--i:5;--bg:#0F1A3A;--s:60px;left:44%;bottom:-4%;--r:4deg"><span class="tt">Machine Learning / CNN</span>AI</span>
+      <span class="tile hide-sm" data-d="20" style="--i:6;--bg:#C0392B;--s:54px;left:12%;top:-2%;--r:14deg"><span class="tt">Oracle Database</span>SQL</span>
+      <span class="tile far hide-sm" data-d="40" style="--i:7;--bg:#0EA5A4;--s:80px;right:-14%;bottom:4%;--r:-10deg"><span class="tt">Jaringan Cisco</span>NET</span>
+      <span class="tile far hide-sm" data-d="40" style="--i:8;--bg:#F7E733;--s:72px;left:-16%;top:52%;--r:12deg;color:#0F1A3A"><span class="tt">BNSP Programmer</span>✓</span>
+    </div>
+    <div class="hero-foot">
+      <div class="hero-tag">Portofolio Kreatif &nbsp;|&nbsp; Naufal Fadillah</div>
+      <div class="cta">
+        <a class="pill-btn y" href="#tentang">Kenalan dulu</a>
+        <a class="pill-btn" href="#cv"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6"/></svg>Lihat CV</a>
+        <a class="pill-btn" href="https://github.com/naufalfadillahh" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><i></i>Gulir</div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tick"></div></div>
+
+<!-- ================= INTRO ================= -->
+<section class="slide intro gut" id="tentang">
+  <div class="wrap intro-grid">
+    <div class="reveal">
+      <div class="hello">Halo, <span class="wave" aria-hidden="true">✋</span> saya</div>
+      <h2><span class="block">Naufal Fadillah</span></h2>
+      <div class="win about-card">
+        <div class="win-bar"><h3>System Analyst</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <p>Saya lulusan Teknik Informatika Universitas Gunadarma dengan minat utama pada pengembangan web front-end: antarmuka yang intuitif, responsif, dan mudah digunakan. Saya juga menekuni Machine Learning dan AI melalui IDCamp Indosat Ooredoo Hutchison dan Asah by Dicoding.</p>
+          <p>Saya punya pengalaman profesional sebagai Programmer dan Team Recruitment di Laboratorium Psikologi Universitas Gunadarma, serta IT Support di SMK Wijaya Kusuma. Saat ini saya bekerja sebagai System Analyst di Anara Trisakti Medika.</p>
+        </div>
+      </div>
+      <div class="stats" role="list">
+        <div class="stat" role="listitem"><b data-n="3.64" data-d="2">3,64</b><span>IPK S1 Informatika</span></div>
+        <div class="stat" role="listitem"><b data-n="36">36</b><span>Sertifikat</span></div>
+        <div class="stat" role="listitem"><b data-n="2">2</b><span>Program AI nasional</span></div>
+        <div class="stat" role="listitem"><b data-n="4">4</b><span>Repo GitHub</span></div>
+      </div>
+      <div class="edu">
+        <h3>Pendidikan</h3>
+        <div class="edu-row"><b>Universitas Gunadarma</b><span class="yr">2022 – 2026</span><span class="sub">S1 Informatika · IPK 3,64</span></div>
+        <div class="edu-row"><b>SMAN 1 Cibinong</b><span class="yr">2019 – 2022</span><span class="sub">Ilmu Pengetahuan Alam</span></div>
+      </div>
+    </div>
+    <div class="intro-side reveal">
+      <div class="photo-card"><span class="clip" aria-hidden="true"></span>
+        <div class="ph" id="introPhoto" role="button" tabindex="0" aria-label="Perbesar foto"><img src="profile.webp" alt=""></div>
+        <div class="url">github.com/naufalfadillahh</div>
+      </div>
+      <div class="win contact-card">
+        <div class="win-bar"><h3>Kontak</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <ul class="c-list">
+            <li><button type="button" data-copy="naufalfadillahtsa@gmail.com"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>naufalfadillahtsa@gmail.com<span class="hint">salin</span></button></li>
+            <li><a href="https://wa.me/6281389456939" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span>0813-8945-6939<span class="hint">WhatsApp ↗</span></a></li>
+            <li><a href="https://www.instagram.com/nauflq/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span>@nauflq<span class="hint">Instagram ↗</span></a></li>
+            <li><a href="https://www.linkedin.com/in/nauflq/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>Naufal Fadillah<span class="hint">LinkedIn ↗</span></a></li>
+            <li><a href="https://github.com/naufalfadillahh" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span>naufalfadillahh<span class="hint">GitHub ↗</span></a></li>
+          </ul>
+        </div>
+        <a class="sticker" href="#kontak">Hubungi Saya!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tape" aria-hidden="true"></div>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="slide gridbg gut" id="pengalaman">
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">Perjalanan karier saya</span><h2><span class="block">Pengalaman</span></h2></div>
+    <div class="exp-top">
+      <div class="chips" role="group" aria-label="Filter pengalaman" id="expChips">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">Semua <span class="n">8</span></button>
+        <button class="chip" type="button" data-f="pro" aria-pressed="false"><i class="sw" style="background:var(--c-pro)"></i>Profesional <span class="n">3</span></button>
+        <button class="chip" type="button" data-f="prog" aria-pressed="false"><i class="sw" style="background:var(--c-prog)"></i>Program <span class="n">2</span></button>
+        <button class="chip" type="button" data-f="biz" aria-pressed="false"><i class="sw" style="background:var(--c-biz)"></i>Wirausaha &amp; lainnya <span class="n">3</span></button>
+      </div>
+      <button class="btn sm" type="button" id="expAll">Buka semua</button>
+    </div>
+    <div class="tbl-wrap"><table class="tbl exp-tbl">
+      <thead><tr><th scope="col">Periode</th><th scope="col">Instansi</th><th scope="col">Posisi</th><th scope="col">Kategori</th><th scope="col">Lokasi</th><th scope="col"><span class="sr">Detail</span></th></tr></thead>
+      <tbody id="expBody"></tbody></table></div>
+  </div>
+</section>
+
+<div class="tape" aria-hidden="true"></div>
+
+<!-- ================= TOOLS ================= -->
+<section class="slide gridbg gut" id="keahlian">
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">Keahlian teknis saya</span><h2><span class="block">Tech stack</span><br><span class="block plain">&amp; tools kerja</span></h2><p class="sub">Klik salah satu untuk melihat sertifikat yang membuktikannya.</p></div>
+    <div class="tbl-wrap"><table class="tbl tool-tbl">
+      <thead><tr><th scope="col">Keahlian</th><th scope="col">Penerapan</th><th scope="col">Bukti</th></tr></thead>
+      <tbody id="toolBody"></tbody></table></div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="slide gut" id="proyek" style="background:linear-gradient(160deg,#E4F4F3 0%,#EEF0FB 55%,#F7E9F1 100%)">
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">Dari GitHub saya</span><h2><span class="block">Proyek</span></h2><p class="sub">Repositori publik di github.com/naufalfadillahh.</p></div>
+    <div class="projects">
+      <article class="win proj">
+        <div class="win-bar"><h3>Klasifikasi Sel Karsinoma Skuamosa (CNN)</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <div class="meta"><span>Public</span><span id="pDate">Diperbarui 25 Jul 2025</span></div>
+          <p>Aplikasi web yang mengklasifikasikan citra sel rongga mulut menjadi karsinoma sel skuamosa atau sel normal menggunakan Convolutional Neural Network (CNN).</p>
+          <div class="rtabs" role="tablist" aria-label="Repositori terkait">
+            <button role="tab" type="button" aria-selected="true" data-r="0">sel_skuamosa</button>
+            <button role="tab" type="button" aria-selected="false" data-r="1">web_penulisan_ilmiah</button>
+            <button role="tab" type="button" aria-selected="false" data-r="2">kanker_mulut_using_cnn</button>
+          </div>
+          <div class="code" id="rFiles"></div>
+          <div class="langs" id="rLangs"></div>
+          <div class="foot"><span class="meta" id="rDesc"></span><a id="rLink" href="https://github.com/naufalfadillahh/sel_skuamosa" target="_blank" rel="noopener">Lihat repo ↗</a></div>
+        </div>
+      </article>
+      <article class="win proj">
+        <div class="win-bar"><h3>Aplikasi CRUD Nama dan Kelas</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        <div class="win-body">
+          <div class="meta"><span>Public</span><span>Diperbarui 14 Jan 2025</span></div>
+          <p>Aplikasi web untuk menambah, menampilkan, mengubah, dan menghapus data nama dan kelas, dengan endpoint PHP terpisah per operasi, dijalankan di XAMPP.</p>
+          <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#F59E0B">XAMPP</span></div>
+          <div class="crud"><div><b>Create</b>save_data.php</div><div><b>Read</b>get_data.php</div><div><b>Update</b>update_data.php</div><div><b>Delete</b>delete_data.php</div></div>
+          <div class="foot"><span></span><a href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Lihat repo ↗</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="tape" aria-hidden="true"></div>
+
+<!-- ================= CERTIFICATES ================= -->
+<section class="slide gridbg gut" id="sertifikasi">
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">36 kredensial</span><h2><span class="block">Sertifikat</span><br><span class="block plain">&amp; lisensi</span></h2></div>
+    <div class="win">
+      <div class="win-bar"><h3>Sertifikat kompetensi nasional</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="win-body feat">
+        <div>
+          <span class="badge">BNSP</span>
+          <h3>Occupation of Programmer</h3>
+          <dl class="rows"><dt>Nomor registrasi</dt><dd>TIK.705.02048.2026</dd><dt>Terbit</dt><dd>Juli 2026 · berlaku 3 tahun</dd><dt>Cakupan</dt><dd>9 unit kompetensi SKKNI, termasuk pemrograman terstruktur dan berorientasi objek, akses basis data, debugging, dan unit testing</dd></dl>
+        </div>
+        <div class="duo"><button type="button" data-bnsp="0" aria-label="Lihat sertifikat BNSP halaman 1"><img src="c00.webp" alt=""></button><button type="button" data-bnsp="1" aria-label="Lihat sertifikat BNSP halaman 2"><img src="c01.webp" alt=""></button></div>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filter penerbit" id="certChips"></div>
+      <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input id="certSearch" type="search" placeholder="Cari sertifikat" aria-label="Cari sertifikat"></label>
+      <select class="select" id="certSort" aria-label="Urutkan sertifikat"><option value="new">Terbaru</option><option value="old">Terlama</option><option value="az">Judul A–Z</option><option value="za">Judul Z–A</option></select>
+    </div>
+    <p class="count" id="certCount"></p>
+    <div class="cgrid" id="certGrid"></div>
+    <p class="empty" id="certEmpty" hidden>Tidak ada sertifikat yang cocok. Coba kata kunci lain.</p>
+  </div>
+</section>
+
+<!-- ================= CV ================= -->
+<section class="slide gut" id="cv" style="background:linear-gradient(160deg,#F7E9F1 0%,#EEF0FB 50%,#E4F4F3 100%)">
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">Curriculum vitae</span><h2><span class="block">CV saya</span></h2></div>
+    <div class="cv-wrap">
+      <article class="doc ringkas" id="doc" aria-label="CV Naufal Fadillah">
+        <aside class="d-side">
+          <img src="profile.webp" alt="">
+          <div><div class="d-h">Kontak</div><ul>
+            <li><span class="k">Email</span>naufalfadillahtsa@gmail.com</li>
+            <li><span class="k">WhatsApp</span><a href="https://wa.me/6281389456939" target="_blank" rel="noopener">0813-8945-6939</a></li>
+            <li><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/nauflq/" target="_blank" rel="noopener">nauflq</a></li>
+            <li><span class="k">GitHub</span><a href="https://github.com/naufalfadillahh" target="_blank" rel="noopener">naufalfadillahh</a></li>
+            <li><span class="k">Domisili</span>Bogor, Jawa Barat</li></ul></div>
+          <div><div class="d-h">Pendidikan</div><ul>
+            <li><b>Universitas Gunadarma</b><span class="k">S1 Informatika · 2022–2026</span><span class="k gpa-l">IPK 3,64</span></li>
+            <li><b>SMAN 1 Cibinong</b><span class="k">IPA · 2019–2022</span></li>
+            <li class="more"><b>SMPN 1 Cibinong</b><span class="k">2016–2019</span></li></ul></div>
+          <div><div class="d-h">Keahlian</div><div class="d-chips"><span>Web Development</span><span>Front-End</span><span>Back-End</span><span>Machine Learning</span><span>Python</span><span>JavaScript</span><span>PHP</span><span>Oracle DB</span><span>Cisco LAN/WAN</span><span>Rekrutmen</span></div></div>
+        </aside>
+        <div class="d-main">
+          <h3>Naufal Fadillah</h3>
+          <div class="r">System Analyst · Front-End Developer · Programmer Bersertifikat BNSP</div>
+          <p class="sum">Sarjana Informatika Universitas Gunadarma (2022–2026, IPK 3,64) dengan minat utama di pengembangan web front-end. Berpengalaman sebagai programmer di Laboratorium Psikologi Gunadarma, menekuni AI dan Machine Learning lewat IDCamp dan Asah by Dicoding, dan kini bekerja sebagai System Analyst.</p>
+          <div class="d-sec">Pengalaman</div><div id="dJobs"></div>
+          <div class="d-sec">Proyek</div><div id="dProj"></div>
+          <div class="d-sec">Sertifikasi utama</div><div id="dCerts"></div>
+        </div>
+      </article>
+      <div class="cv-side">
+        <div class="win"><div class="win-bar"><h3>Tampilan</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><p>Ringkas untuk poin utama, Lengkap untuk seluruh riwayat.</p><div class="seg" role="group" aria-label="Tampilan CV"><button type="button" id="mShort" aria-pressed="true">Ringkas</button><button type="button" id="mFull" aria-pressed="false">Lengkap</button></div></div></div>
+        <div class="win"><div class="win-bar"><h3>Dokumen</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="win-body"><p>CV satu halaman A4 dalam format PDF.</p>
+            <a class="btn dark" href="CV-Naufal-Fadillah.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Unduh PDF</a>
+            <button class="btn" type="button" id="cvPrev"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Pratinjau cetak</button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="slide contact gut" id="kontak">
+  <div class="mesh" aria-hidden="true"><i class="m1"></i><i class="m2"></i><i class="m3"></i><i class="m4"></i></div>
+  <div class="wrap reveal">
+    <div class="s-head"><span class="kicker">Ayo bekerja sama</span><h2><span class="block">Hubungi saya</span></h2></div>
+    <div class="c-grid">
+      <div class="c-big">
+        <p>Terbuka untuk peluang kerja, magang, dan kolaborasi proyek. Klik alamat email untuk menyalinnya, atau langsung chat lewat WhatsApp.</p>
+        <button class="mail" type="button" data-copy="naufalfadillahtsa@gmail.com">naufalfadillahtsa@gmail.com</button>
+        <div class="row"><a class="pill-btn y" href="https://wa.me/6281389456939" target="_blank" rel="noopener">Chat via WhatsApp ↗</a><a class="pill-btn" href="CV-Naufal-Fadillah.pdf" target="_blank" rel="noopener">Unduh CV ↗</a></div>
+      </div>
+      <div class="links">
+        <a class="lk" href="https://wa.me/6281389456939" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg></span><span><b>WhatsApp</b><span>0813-8945-6939</span></span><span class="arr">↗</span></a>
+        <a class="lk" href="https://www.linkedin.com/in/nauflq/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><span><b>LinkedIn</b><span>nauflq</span></span><span class="arr">↗</span></a>
+        <a class="lk" href="https://github.com/naufalfadillahh" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span><span><b>GitHub</b><span>naufalfadillahh</span></span><span class="arr">↗</span></a>
+        <a class="lk" href="https://www.instagram.com/nauflq/" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><span><b>Instagram</b><span>nauflq</span></span><span class="arr">↗</span></a>
+        <div class="lk" style="cursor:default"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Domisili</b><span>Bogor, Jawa Barat</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="gut">
+  <div class="wrap"><span class="ft-id"><img src="profile.webp" alt="">Naufal Fadillah</span><span>© 2026 · Bogor, Jawa Barat · Data dari LinkedIn &amp; GitHub</span><button type="button" id="toTop">Kembali ke atas ↑</button></div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Pratinjau gambar">
+  <div class="lb-top"><span id="lbCount"></span><button class="lb-btn" id="lbClose" type="button" aria-label="Tutup">✕</button></div>
+  <div class="lb-stage"><button class="lb-btn" id="lbPrev" type="button" aria-label="Sebelumnya">‹</button><figure><img id="lbImg" alt=""></figure><button class="lb-btn" id="lbNext" type="button" aria-label="Berikutnya">›</button></div>
+  <div class="lb-cap"><h4 id="lbTitle"></h4><p id="lbSub"></p></div>
+</div>
+<div class="toast" id="toast" hidden role="status"></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return [].slice.call((r||document).querySelectorAll(s))}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var tT;function toast(m){var t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(tT);tT=setTimeout(function(){t.hidden=true},2000)}
+  function go(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:reduce?'auto':'smooth'})}
+
+  /* ---------- Data ---------- */
+  var ISS={bnsp:{name:'BNSP',full:'Badan Nasional Sertifikasi Profesi (BNSP)',color:'#B7791F'},ug:{name:'Gunadarma',full:'Universitas Gunadarma',color:'#6D28D9'},dic:{name:'Dicoding',full:'Asah led by Dicoding',color:'#0284C7'},ibm:{name:'IBM',full:'IBM SkillsBuild',color:'#0F766E'}};
+  var C=[['Occupation of Programmer','bnsp','Jul 2026','No. Reg. TIK.705.02048.2026'],['Occupation of Programmer (daftar unit)','bnsp','Jul 2026','9 unit kompetensi SKKNI'],['Aptitude Test','ug','Jul 2026','ID 544148/AT/FPSI/2026'],['Application Implementation and Development','ug','Mei 2026','ID 900910'],['JavaScript Programming Language Fundamental','ug','Mei 2026','ID 218828'],['Application Development Design','ug','Sep 2025','ID 044903'],['Oracle for Intermediate','ug','Feb 2025',''],['Wide Area Network Using Cisco Router for Intermediate','ug','Agu 2025',''],['Oracle for Beginner','ug','Feb 2024',''],['Local Area Network Using Cisco Router','ug','Agu 2024',''],['Fundamental DBMS','ug','Agu 2023',''],['Fundamental Networking','ug','Feb 2023',''],['Membangun Aplikasi Gen AI dengan Microsoft Azure','dic','Jan 2026',''],['Belajar Penerapan Data Science dengan Microsoft Fabric','dic','Jan 2026',''],['Accepting the “Career Management Essentials”','ibm','Des 2025',''],['Ace Your Professional Interview','ibm','Des 2025',''],['Create a Great Professional Resume','ibm','Des 2025',''],['Develop Your Professional Network and Brand','ibm','Des 2025',''],['Focus Your Direction with Workplace Research','ibm','Des 2025',''],['Earn it! Accept it! Share it!','ibm','Des 2025',''],['Create a Credly Account','ibm','Des 2025',''],['AI Ethics','ibm','Des 2025',''],['Introduction to Generative AI','ibm','Des 2025',''],['Introduction to Artificial Intelligence','ibm','Des 2025',''],['Career Management Essentials','ibm','Des 2025','Badge Credly'],['Introduction to Financial Literacy','dic','Nov 2025',''],['Belajar Fundamental Front-End Web Development','dic','Nov 2025',''],['Belajar Dasar AI','dic','Nov 2025',''],['Belajar Pengembangan Web Intermediate','dic','Nov 2025',''],['Belajar Dasar Cloud dan Gen AI di AWS','dic','Nov 2025',''],['Belajar Back-End Pemula dengan JavaScript','dic','Nov 2025',''],['Belajar Membuat Front-End Web untuk Pemula','dic','Sep 2025','ID 1RXYQ1K3KZVM'],['Belajar Dasar Pemrograman JavaScript','dic','Sep 2025','ID MRZM642DRPYQ'],['Belajar Dasar Pemrograman Web','dic','Agu 2025','ID MRZM64DLRPYQ'],['Belajar Dasar Git dengan GitHub','dic','Agu 2025','ID 53XEK0QDKXRN'],['Pengenalan ke Logika Pemrograman (Programming Logic 101)','dic','Agu 2025','ID 81P25G4LNPOY'],['Memulai Dasar Pemrograman untuk Menjadi Pengembang Software','dic','Agu 2025','ID ERZR2MYYQPYV']];
+  var MON={Jan:0,Feb:1,Mar:2,Apr:3,Mei:4,Jun:5,Jul:6,Agu:7,Sep:8,Okt:9,Nov:10,Des:11};
+  function ym(s){var p=s.split(' ');return +p[1]*12+MON[p[0]]}
+  function pad(i){return (i<10?'0':'')+i}
+  var certs=C.map(function(c,i){return {i:i,src:'c'+pad(i)+'.webp',title:c[0],iss:c[1],date:c[2],id:c[3],t:ym(c[2])}});
+  function certItem(c){return {src:c.src,title:c.title,sub:ISS[c.iss].full+' · '+c.date+(c.id?' · '+c.id:'')}}
+  function sortKey(t){return t.replace(/^[^A-Za-z0-9]+/,'')}
+  var KC={pro:'var(--c-pro)',prog:'var(--c-prog)',biz:'var(--c-biz)'};
+  var EXP=[
+    {id:'j-anara',k:'pro',t:'Anara Trisakti Medika',per:'Sep 2026 – Sekarang',now:1,pos:'System Analyst',type:'Apprenticeship',loc:'Jakarta Timur',body:'<p>Bergabung sebagai System Analyst dalam program apprenticeship, bekerja on-site.</p>'},
+    {id:'j-lab',k:'pro',t:'Laboratorium Psikologi Universitas Gunadarma',per:'Sep 2024 – Agu 2026',pos:'Programmer & Team Recruitment',type:'Kontrak',loc:'Depok · Hybrid',body:'<h4>Programmer · Sep 2024 – Agu 2026</h4><div class="tags"><span class="tag">Web Development</span><span class="tag">Front-End</span><span class="tag">Back-End</span><span class="tag">Full-Stack</span><span class="tag">JavaScript</span><span class="tag">Python</span></div><div class="gallery" data-g="Programmer · Lab Psikologi Gunadarma" data-imgs="e01,e02,e03"></div><h4>Team Recruitment · Mar 2025 – Agu 2026</h4><div class="tags"><span class="tag">Screening &amp; Interviewing</span><span class="tag">Recruitment Strategy Planning</span></div><div class="gallery" data-g="Team Recruitment · Lab Psikologi Gunadarma" data-imgs="e00"></div>'},
+    {id:'j-idcamp',k:'prog',t:'IDCamp Indosat Ooredoo Hutchison',per:'Sep 2025 – Feb 2026',pos:'AI Front-End Developer',type:'Program pelatihan',loc:'Remote',body:'<div class="tags"><span class="tag">Front-End</span><span class="tag">JavaScript</span><span class="tag">AI</span></div>'},
+    {id:'j-asah',k:'prog',t:'Asah led by Dicoding',per:'Agu 2025 – Jan 2026',pos:'Front-End Web & Back-End with AI',type:'Program pelatihan',loc:'Remote',body:'<div class="tags"><span class="tag">Web Development</span><span class="tag">Front-End</span><span class="tag">Back-End</span><span class="tag">AI</span></div><div class="gallery" data-g="Asah led by Dicoding" data-imgs="e04,e05,e06"></div>'},
+    {id:'j-rexp',k:'biz',t:'Rex Parfume',per:'Agu 2024 – Jan 2026',pos:'Business Owner',type:'Wirausaha',loc:'Kab. Bogor · Hybrid',body:'<p>Menjalankan usaha jual beli parfum melalui Facebook Marketplace dan Shopee.</p><div class="gallery" data-g="Rex Parfume" data-imgs="e07,e08" data-caps="Facebook Marketplace,Toko Shopee"></div>'},
+    {id:'j-it',k:'pro',t:'SMK Wijaya Kusuma',per:'Jan 2023 – Des 2025',pos:'IT Support Technician',type:'Paruh waktu',loc:'Cibinong',body:'<div class="tags"><span class="tag">Instalasi &amp; Konfigurasi Software</span><span class="tag">Monitoring Server &amp; Client</span><span class="tag">Sistem Operasi Windows</span></div><div class="gallery" data-g="IT Support · SMK Wijaya Kusuma" data-imgs="e09,e10"></div>'},
+    {id:'j-rexs',k:'biz',t:'Rex Store',per:'Jun 2024 – Nov 2024',pos:'Business Owner',type:'Wirausaha',loc:'Kab. Bogor · Hybrid',body:'<p>Bersama partner, menjual pakaian dan celana secara offline maupun online.</p><div class="gallery" data-g="Rex Store" data-imgs="e11,e12" data-caps="Lapak offline,Toko online"></div>'},
+    {id:'j-jnt',k:'biz',t:'J&T Cargo',per:'Mar 2024 – Mei 2024',pos:'Warehouse Staff',type:'Paruh waktu',loc:'Depok',body:'<div class="tags"><span class="tag">Inventory Management</span><span class="tag">Detail Oriented</span></div><div class="gallery" data-g="Warehouse · J&amp;T Cargo" data-imgs="e13,e14,e15"></div>'}];
+  var KN={pro:'Profesional',prog:'Program',biz:'Wirausaha & lainnya'};
+  var TOOLS=[
+    {cat:'Pengembangan web',items:[
+      {ab:'JS',bg:'#E8B90F',fg:'#0F1A3A',n:'JavaScript',d:'Membangun interaksi antarmuka web dan logika front-end maupun back-end pemula.',c:[4,32,30,26]},
+      {ab:'</>',bg:'#E2552D',n:'HTML & CSS',d:'Menyusun struktur dan tampilan halaman web yang responsif.',c:[33,31,26,28]},
+      {ab:'PHP',bg:'#6D5BD0',n:'PHP',d:'Membuat endpoint CRUD untuk aplikasi web, seperti proyek Nama dan Kelas.',c:[],p:1},
+      {ab:'FS',bg:'#2148D8',n:'Full-stack web',d:'Merancang dan mengimplementasikan aplikasi web dari desain hingga implementasi.',c:[3,5]}]},
+    {cat:'AI & data',items:[
+      {ab:'Py',bg:'#3776AB',n:'Python',d:'Membangun aplikasi web klasifikasi citra dan mengolah data.',c:[13],p:1},
+      {ab:'CNN',bg:'#0F1A3A',n:'Machine Learning & CNN',d:'Melatih model klasifikasi citra sel karsinoma skuamosa rongga mulut.',c:[27,23],p:1},
+      {ab:'GenAI',bg:'#9333EA',n:'Generative AI',d:'Membangun aplikasi Gen AI dan memahami etika penggunaan AI.',c:[12,22,21]},
+      {ab:'☁',bg:'#0EA5E9',n:'Cloud (Azure & AWS)',d:'Dasar layanan cloud untuk menjalankan aplikasi AI.',c:[12,29]}]},
+    {cat:'Database & jaringan',items:[
+      {ab:'SQL',bg:'#C0392B',n:'Oracle Database',d:'Mengelola basis data tingkat pemula hingga menengah.',c:[8,6]},
+      {ab:'DB',bg:'#7C3AED',n:'DBMS',d:'Merancang dan mengakses basis data relasional.',c:[10,0]},
+      {ab:'NET',bg:'#0EA5A4',n:'Cisco Router (LAN & WAN)',d:'Mengonfigurasi jaringan lokal dan area luas dengan router Cisco.',c:[11,9,7]}]},
+    {cat:'Kerja & kolaborasi',items:[
+      {ab:'SA',bg:'#0F1A3A',n:'Analisis sistem',d:'Menganalisis kebutuhan dan merancang alur sistem sebagai System Analyst.',c:[5,3]},
+      {ab:'HR',bg:'#DB2777',n:'Rekrutmen',d:'Screening, interview, dan perencanaan strategi rekrutmen.',c:[2,15]},
+      {ab:'IT',bg:'#475569',n:'IT support',d:'Instalasi software, monitoring server dan client, sistem operasi Windows.',c:[]},
+      {ab:'CM',bg:'#16A34A',n:'Career management',d:'Pengembangan karier, resume, wawancara, dan personal branding.',c:[24,16,17,18]}]}];
+
+  /* ---------- Lightbox ---------- */
+  var lb=$('#lb'),list=[],pos=0,lastF=null;
+  function lbR(){var it=list[pos];$('#lbImg').src=it.src;$('#lbImg').alt=it.title;$('#lbTitle').textContent=it.title;$('#lbSub').textContent=it.sub||'';$('#lbCount').textContent=(pos+1)+' / '+list.length;$('#lbPrev').style.visibility=$('#lbNext').style.visibility=list.length>1?'visible':'hidden'}
+  function open(items,k){list=items;pos=k||0;lastF=document.activeElement;lbR();lb.hidden=false;document.body.style.overflow='hidden';$('#lbClose').focus()}
+  function close(){lb.hidden=true;document.body.style.overflow='';if(lastF)lastF.focus()}
+  function step(d){pos=(pos+d+list.length)%list.length;lbR()}
+  $('#lbClose').onclick=close;$('#lbPrev').onclick=function(){step(-1)};$('#lbNext').onclick=function(){step(1)};
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.tagName==='FIGURE')close()});
+  var tx=null;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});lb.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)step(dx<0?1:-1);tx=null});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+  var PHOTO=[{src:'profile.webp',title:'Naufal Fadillah',sub:'System Analyst · Programmer bersertifikat BNSP'}];
+  ['heroPhoto','introPhoto'].forEach(function(id){var el=$('#'+id);el.onclick=function(){open(PHOTO,0)};el.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(PHOTO,0)}}});
+
+  /* ---------- Hero interactivity ---------- */
+  var hero=$('#beranda'),glow=$('#glow'),tiles=$$('.tile');
+  if(fine&&!reduce){hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;glow.style.setProperty('--gx',x+'px');glow.style.setProperty('--gy',y+'px');
+    var nx=x/r.width-.5,ny=y/r.height-.5;tiles.forEach(function(t){var d=+t.dataset.d;t.style.setProperty('--px',(-nx*d)+'px');t.style.setProperty('--py',(-ny*d)+'px')})});
+    hero.addEventListener('pointerleave',function(){tiles.forEach(function(t){t.style.setProperty('--px','0px');t.style.setProperty('--py','0px')})})}
+  if(!reduce){var t0=performance.now();(function bob(t){var k=(t-t0)/1000;tiles.forEach(function(el,i){el.style.marginTop=(Math.sin(k*.8+i*1.3)*6)+'px'});requestAnimationFrame(bob)})(t0)}
+
+  /* ---------- Experience ---------- */
+  var xb=$('#expBody');
+  EXP.forEach(function(x){var r=document.createElement('tr');r.className='r';r.id=x.id;r.dataset.k=x.k;r.dataset.open='false';r.style.setProperty('--c',KC[x.k]);r.tabIndex=0;r.setAttribute('aria-expanded','false');
+    r.innerHTML='<td class="c-per"><span class="per">'+x.per+'</span></td><td class="c-org"><span class="org">'+esc(x.t)+'</span>'+(x.now?'<span class="now">Aktif</span>':'')+'</td><td class="c-pos"><span class="pos">'+esc(x.pos)+'</span></td><td class="c-cat"><span class="cat" style="--c:'+KC[x.k]+'">'+esc(x.type)+'</span><span class="loc2">'+esc(x.loc)+'</span></td><td class="c-loc"><span class="loc">'+esc(x.loc)+'</span></td><td class="c-tog"><span class="tog" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></td>';
+    var d=document.createElement('tr');d.className='dt';d.dataset.open='false';d.dataset.k=x.k;d.style.setProperty('--c',KC[x.k]);d.innerHTML='<td colspan="6"><div class="dbox"><div><div class="din">'+x.body+'</div></div></div></td>';
+    xb.appendChild(r);xb.appendChild(d)});
+  function setOpen(r,o){r.dataset.open=o;r.setAttribute('aria-expanded',o);r.nextElementSibling.dataset.open=o}
+  $$('#expBody tr.r').forEach(function(r){r.onclick=function(e){if(e.target.closest('.gallery'))return;setOpen(r,r.dataset.open!=='true')};r.onkeydown=function(e){if(e.target===r&&(e.key==='Enter'||e.key===' ')){e.preventDefault();r.click()}}});
+  setOpen($('#j-anara'),true);
+  var allOpen=false;$('#expAll').onclick=function(){allOpen=!allOpen;$$('#expBody tr.r').forEach(function(r){if(!r.hidden)setOpen(r,allOpen)});this.textContent=allOpen?'Tutup semua':'Buka semua'};
+  function jump(id){var r=document.getElementById(id);if(!r)return;if(r.hidden)$$('#expChips .chip')[0].click();setOpen(r,true);setTimeout(function(){r.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})},60);r.classList.add('flash');setTimeout(function(){r.classList.remove('flash')},1600)}
+  var ec=$$('#expChips .chip');ec.forEach(function(b){b.onclick=function(){ec.forEach(function(x){x.setAttribute('aria-pressed',x===b)});var f=b.dataset.f;$$('#expBody tr').forEach(function(r){r.hidden=!(f==='all'||r.dataset.k===f)})}});
+  $$('.gallery').forEach(function(g){var ids=g.dataset.imgs.split(','),caps=(g.dataset.caps||'').split(','),name=g.dataset.g;var items=ids.map(function(id,k){return {src:''+id+'.webp',title:name,sub:caps[k]||('Foto '+(k+1)+' dari '+ids.length)}});
+    ids.forEach(function(id,k){var b=document.createElement('button');b.type='button';b.className='thumb';b.setAttribute('aria-label','Perbesar foto '+(k+1)+' '+name);b.innerHTML='<img loading="lazy" src="'+id+'.webp" alt="">';b.onclick=function(){open(items,k)};g.appendChild(b)})});
+
+  /* ---------- Tools ---------- */
+  var tb=$('#toolBody');
+  TOOLS.forEach(function(gp){var gr=document.createElement('tr');gr.className='grp';gr.innerHTML='<td colspan="3">'+esc(gp.cat)+'</td>';tb.appendChild(gr);
+    gp.items.forEach(function(it){var r=document.createElement('tr');r.className='r';
+      var has=it.c.length||it.p;var ev=it.c.length?'Lihat '+it.c.length+' sertifikat →':(it.p?'Lihat proyek →':'');
+      r.innerHTML='<td class="c-sk"><span class="sk"><span class="ti" style="--bg:'+it.bg+';--fg:'+(it.fg||'#fff')+'">'+esc(it.ab)+'</span>'+esc(it.n)+'</span></td><td class="c-desc">'+esc(it.d)+'</td><td class="c-ev">'+(has?'<button type="button" class="ev-btn">'+ev+'</button>':'<span class="ev-none">Dari pengalaman kerja</span>')+'</td>';
+      function act(){if(it.c.length)open(it.c.map(function(i){return certItem(certs[i])}),0);else if(it.p)go('proyek')}
+      if(has){r.onclick=act}else r.style.cursor='default';
+      tb.appendChild(r)})});
+
+  /* ---------- Projects ---------- */
+  var REPOS=[
+    {name:'sel_skuamosa',date:'25 Jul 2025',files:[['d','static/'],['d','templates/'],['f','app.py'],['f','app_penjelasan.py'],['f','app.log']],lang:[['Python','#3776AB'],['HTML','#E2552D'],['CNN','#0F1A3A']],desc:'Repositori utama · 1 commit'},
+    {name:'web_penulisan_ilmiah',date:'11 Jul 2025',files:[['d','static/'],['d','templates/'],['f','app.py'],['f','README.md'],['f','app.log']],lang:[['Python','#3776AB'],['HTML','#E2552D']],desc:'Versi untuk penulisan ilmiah'},
+    {name:'kanker_mulut_using_cnn',date:'15 Jul 2025',files:[],lang:[['CNN','#0F1A3A']],desc:'Repositori dengan topik yang sama'}];
+  function repo(k){var r=REPOS[k];$('#rFiles').innerHTML='<div class="c"># '+r.name+'</div>'+(r.files.length?r.files.map(function(f){return '<div class="'+f[0]+'">'+f[1]+'</div>'}).join(''):'<div class="c">— tidak ada file yang ditampilkan</div>');
+    $('#rLangs').innerHTML=r.lang.map(function(l){return '<span style="--lc:'+l[1]+'">'+l[0]+'</span>'}).join('');$('#rDesc').textContent=r.desc;$('#pDate').textContent='Diperbarui '+r.date;$('#rLink').href='https://github.com/naufalfadillahh/'+r.name;
+    $$('.rtabs button').forEach(function(b){b.setAttribute('aria-selected',+b.dataset.r===k)})}
+  $$('.rtabs button').forEach(function(b){b.onclick=function(){repo(+b.dataset.r)}});repo(0);
+
+  /* ---------- Certificates ---------- */
+  var grid=$('#certGrid'),cc=$('#certChips'),st={iss:'all',q:'',sort:'new'},vis=[],pool=certs.filter(function(c){return c.i!==1});
+  [['all','Semua',36]].concat(Object.keys(ISS).map(function(k){return [k,ISS[k].name,pool.filter(function(c){return c.iss===k}).length]})).forEach(function(f){var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',f[0]==='all');
+    b.innerHTML=(f[0]!=='all'?'<i class="sw" style="background:'+ISS[f[0]].color+'"></i>':'')+f[1]+' <span class="n">'+f[2]+'</span>';b.onclick=function(){st.iss=f[0];$$('.chip',cc).forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw()};cc.appendChild(b)});
+  $('#certSearch').addEventListener('input',function(e){st.q=e.target.value.trim().toLowerCase();draw()});
+  $('#certSort').addEventListener('change',function(e){st.sort=e.target.value;draw()});
+  var SN={new:'terbaru',old:'terlama',az:'judul A–Z',za:'judul Z–A'};
+  function draw(){vis=pool.filter(function(c){return (st.iss==='all'||c.iss===st.iss)&&(!st.q||(c.title+' '+ISS[c.iss].full+' '+c.date).toLowerCase().indexOf(st.q)>-1)});
+    vis.sort(function(a,b){if(st.sort==='az')return sortKey(a.title).localeCompare(sortKey(b.title),'id',{sensitivity:'base'});if(st.sort==='za')return sortKey(b.title).localeCompare(sortKey(a.title),'id',{sensitivity:'base'});
+      if(a.iss==='bnsp')return -1;if(b.iss==='bnsp')return 1;return st.sort==='old'?a.t-b.t||a.i-b.i:b.t-a.t||a.i-b.i});
+    grid.innerHTML='';vis.forEach(function(c,k){var b=document.createElement('button');b.type='button';b.className='cc';b.setAttribute('aria-label','Lihat sertifikat '+c.title);
+      b.innerHTML='<span class="bar"><span><i class="sw" style="background:'+ISS[c.iss].color+';margin-right:6px"></i>'+ISS[c.iss].name+'</span><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></span><span class="im"><img loading="lazy" src="'+c.src+'" alt=""></span><span class="t"></span><span class="dt">'+c.date+'</span>';
+      b.querySelector('.t').textContent=c.title;b.onclick=function(){open(vis.map(certItem),k)};grid.appendChild(b)});
+    $('#certCount').textContent='Menampilkan '+vis.length+' dari 36 · urutan '+SN[st.sort];$('#certEmpty').hidden=vis.length>0}
+  draw();$$('[data-bnsp]').forEach(function(b){b.onclick=function(){open([certItem(certs[0]),certItem(certs[1])],+b.dataset.bnsp)}});
+
+  /* ---------- CV ---------- */
+  var CVJ=[['System Analyst · Anara Trisakti Medika','Sep 2026 – Sekarang','j-anara',1],['Programmer · Lab Psikologi Gunadarma','Sep 2024 – Agu 2026','j-lab',1],['Team Recruitment · Lab Psikologi Gunadarma','Mar 2025 – Agu 2026','j-lab',1],['IT Support Technician · SMK Wijaya Kusuma','Jan 2023 – Des 2025','j-it',1],['AI Front-End Developer · IDCamp Indosat Ooredoo Hutchison','Sep 2025 – Feb 2026','j-idcamp',1],['Front-End & Back-End with AI · Asah led by Dicoding','Agu 2025 – Jan 2026','j-asah',1],['Business Owner · Rex Parfume','Agu 2024 – Jan 2026','j-rexp',0],['Business Owner · Rex Store','Jun 2024 – Nov 2024','j-rexs',0],['Warehouse Staff · J&T Cargo','Mar 2024 – Mei 2024','j-jnt',0]];
+  CVJ.forEach(function(j){var b=document.createElement('button');b.type='button';b.className='d-item'+(j[3]?'':' more');b.innerHTML='<b>'+esc(j[0])+'</b><span class="d">'+j[1]+'</span>';b.onclick=function(){jump(j[2])};$('#dJobs').appendChild(b)});
+  [['Klasifikasi Sel Karsinoma Skuamosa dengan CNN Berbasis Web','Jul 2025','Python · CNN · aplikasi web'],['Aplikasi CRUD Nama dan Kelas','Jan 2025','HTML · PHP · XAMPP']].forEach(function(p,k){var b=document.createElement('button');b.type='button';b.className='d-item'+(k?' more':'');b.innerHTML='<b>'+esc(p[0])+'</b><span class="d">'+p[1]+'</span><span class="o">'+esc(p[2])+'</span>';b.onclick=function(){go('proyek')};$('#dProj').appendChild(b)});
+  var top=[0,3,4,12,13,22];top.forEach(function(i,k){var c=certs[i],b=document.createElement('button');b.type='button';b.className='d-item'+(k>=3?' more':'');b.innerHTML='<b></b><span class="d"></span>';b.querySelector('b').textContent=c.title;b.querySelector('.d').textContent=ISS[c.iss].name+' · '+c.date;b.onclick=function(){open(top.map(function(x){return certItem(certs[x])}),k)};$('#dCerts').appendChild(b)});
+  var doc=$('#doc');function mode(f){doc.classList.toggle('ringkas',!f);$('#mShort').setAttribute('aria-pressed',!f);$('#mFull').setAttribute('aria-pressed',f)}
+  $('#mShort').onclick=function(){mode(false)};$('#mFull').onclick=function(){mode(true)};
+  $('#cvPrev').onclick=function(){open([{src:'cv.webp',title:'CV Naufal Fadillah',sub:'Versi cetak satu halaman A4'}],0)};
+
+  /* ---------- Header + nav ---------- */
+  var header=$('#header'),navA=$$('#nav a'),tabA=$$('#tabbar a');
+  var ids=['beranda','tentang','pengalaman','keahlian','proyek','sertifikasi','cv','kontak'],secs=ids.map(function(i){return document.getElementById(i)});
+  function onScroll(){header.classList.toggle('solid',scrollY>40);var cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<innerHeight*.4)cur=i});if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=secs.length-1;var id=ids[cur];
+    navA.forEach(function(a){var on=a.getAttribute('href')==='#'+id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')});
+    var tid={tentang:'beranda',proyek:'keahlian'}[id]||id;tabA.forEach(function(a){a.classList.toggle('active',a.dataset.s===tid)})}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  $('#toTop').onclick=function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})};
+
+  /* ---------- Reveal + count-up ---------- */
+  function countUp(el){var n=+el.dataset.n,d=+(el.dataset.d||0),t0=null;function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1100,1);el.textContent=(n*(1-Math.pow(1-p,3))).toFixed(d).replace('.',',');if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.remove('pending');$$('[data-n]',en.target).forEach(countUp);io.unobserve(en.target)}})},{rootMargin:'0px 0px -8% 0px'});
+    $$('.reveal').forEach(function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');io.observe(el)}})}
+
+  /* ---------- Motion ---------- */
+  (function(){
+    var words=['System Analyst','Front-End Developer','Programmer BNSP','Python','JavaScript','PHP','Machine Learning','CNN','Oracle Database','Cisco Networking','36 Sertifikat','IPK 3,64'];
+    var row=$('#tick');var html=words.map(function(w){return '<span>'+w+'</span>'}).join('');row.innerHTML=html+html;
+    var bar=$('#progress');addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(h>0?scrollY/h:0)+')'},{passive:true});
+    if(reduce)return;
+    /* heading wipes + kicker slides */
+    var io2=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io2.unobserve(en.target)}})},{rootMargin:'0px 0px -12% 0px'});
+    var io3=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){$$('.block',en.target).forEach(function(bk,n){setTimeout(function(){bk.classList.add('in')},n*180)});io3.unobserve(en.target)}})},{rootMargin:'0px 0px -12% 0px'});
+    $$('.slide h2').forEach(function(h){if(h.getBoundingClientRect().top>innerHeight*.9){$$('.block',h).forEach(function(bk){bk.classList.add('wipe')});io3.observe(h)}});
+    $$('.slide .kicker').forEach(function(el){if(el.getBoundingClientRect().top>innerHeight*.9){el.classList.add('kslide');io2.observe(el)}});
+    /* staggered groups */
+    function stagger(sel){$$(sel).forEach(function(group){var kids=[].slice.call(group.children);if(group.getBoundingClientRect().top<innerHeight*.9)return;
+      kids.forEach(function(k,n){k.classList.add('st','pre');k.style.setProperty('--k',Math.min(n,10))});
+      var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){kids.forEach(function(k){k.classList.remove('pre')});o.disconnect()}})},{rootMargin:'0px 0px -10% 0px'});o.observe(group)})}
+    stagger('#expBody');stagger('#toolBody');stagger('.stats');stagger('.c-list');stagger('.links');stagger('.projects');
+    /* re-stagger certificate grid whenever it is redrawn */
+    var grid=$('#certGrid');new MutationObserver(function(){var kids=[].slice.call(grid.children);kids.forEach(function(k,n){k.classList.add('st','pre');k.style.setProperty('--k',Math.min(n,12))});requestAnimationFrame(function(){requestAnimationFrame(function(){kids.forEach(function(k){k.classList.remove('pre')})})})}).observe(grid,{childList:true});
+    if(!fine)return;
+    /* magnetic buttons */
+    $$('.pill-btn,.hd-cta,.sticker').forEach(function(b){b.classList.add('mag');b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;b.style.transform='translate('+(x*.18)+'px,'+(y*.28)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});
+    /* 3D tilt on certificate cards */
+    grid.addEventListener('pointermove',function(e){var c=e.target.closest('.cc');if(!c)return;var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.classList.add('tilt');c.style.transform='translateY(-4px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg)'});
+    grid.addEventListener('pointerout',function(e){var c=e.target.closest('.cc');if(c&&!c.contains(e.relatedTarget)){c.classList.remove('tilt');c.style.transform=''}});
+  })();
+
+  /* ---------- Copy ---------- */
+  $$('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy;try{navigator.clipboard.writeText(t).then(function(){toast('Tersalin: '+t)},function(){toast(t)})}catch(e){toast(t)}})});
+})();
+</script>
+
+</body>
+</html>
