@@ -674,12 +674,30 @@ tr.dt p{margin:0 0 6px}
     <div class="s-head"><span class="kicker">Dari GitHub saya</span><h2><span class="block">Proyek</span></h2><p class="sub">Tampilan asli aplikasi yang saya bangun. Klik layarnya untuk mencoba versi live.</p></div>
     <div class="showcase">
       <article class="show">
+        <a class="device" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live ChemicAI">
+          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>chemicai-naufal.vercel.app</span></span>
+          <span class="screen"><img src="p-chemicai.webp" alt="Halaman depan ChemicAI dengan judul Revolusi Kimia dengan AI" loading="lazy"><span class="open">Buka demo live ↗</span></span>
+        </a>
+        <div class="sinfo">
+          <span class="no">01 · Capstone tim · AI</span>
+          <h3>ChemicAI · Generasi Molekul Kimia</h3>
+          <p>Aplikasi web berbasis AI untuk menghasilkan dan menganalisis molekul kimia. Pengguna memasukkan struktur molekul dalam format <b>SMILES</b>, lalu model <b>MolMIM</b> dari NVIDIA menghasilkan kandidat molekul baru yang dioptimalkan.</p>
+          <ul class="facts">
+            <li>Parameter generasi bisa diatur: jumlah molekul, skor similarity, iterasi, dan partikel; properti yang dioptimalkan QED atau logP</li>
+            <li>Login dan registrasi dengan JWT, riwayat generasi tersimpan per pengguna di PostgreSQL</li>
+            <li>Arsitektur terpisah: front-end React, REST API FastAPI dengan migrasi Alembic, dan layanan machine learning</li>
+          </ul>
+          <div class="langs"><span style="--lc:#0EA5A4">React 19</span><span style="--lc:#2148D8">Tailwind CSS</span><span style="--lc:#18A058">FastAPI</span><span style="--lc:#0E7490">PostgreSQL</span><span style="--lc:#0F1A3A">JWT</span></div>
+          <div class="sbtns"><a class="btn dark sm" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/chemicai-capstone" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
+        </div>
+      </article>
+      <article class="show rev">
         <a class="device" href="https://sel-skuamosa-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live Sistem Diagnosis Citra Medis">
           <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>sel-skuamosa-naufal.vercel.app</span></span>
           <span class="screen"><img src="p-cnn.webp" alt="Tampilan aplikasi Sistem Diagnosis Citra Medis menampilkan hasil Sel Skuamosa Karsinoma" loading="lazy"><span class="open">Buka demo live ↗</span></span>
         </a>
         <div class="sinfo">
-          <span class="no">01 · Skripsi · AI</span>
+          <span class="no">02 · Skripsi · AI</span>
           <h3>Sistem Diagnosis Citra Medis</h3>
           <p>Aplikasi web untuk mengklasifikasikan citra sel rongga mulut menjadi <b>sel skuamosa normal</b> atau <b>karsinoma sel skuamosa</b> dengan Convolutional Neural Network. Pengguna mengunggah citra JPG, lalu model memberi hasil diagnosis beserta rekomendasi.</p>
           <ul class="facts">
@@ -691,50 +709,36 @@ tr.dt p{margin:0 0 6px}
           <p class="rel">Repo terkait: <a href="https://github.com/naufalfadillahh/web_penulisan_ilmiah" target="_blank" rel="noopener">web_penulisan_ilmiah</a> · <a href="https://github.com/naufalfadillahh/kanker_mulut_using_cnn" target="_blank" rel="noopener">kanker_mulut_using_cnn</a></p>
         </div>
       </article>
-      <article class="show rev">
-        <a class="device" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live aplikasi CRUD Nama dan Kota">
-          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>crud-nama-kota-naufal.vercel.app</span></span>
-          <span class="screen"><img src="p-crud.webp" alt="Tampilan aplikasi CRUD Nama dan Kota Asal dengan formulir dan daftar pengguna" loading="lazy"><span class="open">Buka demo live ↗</span></span>
-        </a>
-        <div class="sinfo">
-          <span class="no">02 · Web app</span>
-          <h3>Aplikasi CRUD Nama dan Kota</h3>
-          <p>Aplikasi web untuk menambah, menampilkan, mengubah, menghapus, dan mengurutkan data nama dan kota asal. Setiap operasi punya endpoint PHP sendiri dengan database MySQL.</p>
-          <ul class="facts">
-            <li>Front-end HTML + JavaScript, back-end PHP + MySQL (XAMPP)</li>
-            <li>Versi online memakai API demo pengganti PHP, data disimpan sementara di memori</li>
-          </ul>
-          <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#C9A400">JavaScript</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#0E7490">MySQL</span></div>
-          <div class="sbtns"><a class="btn dark sm" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
-        </div>
-      </article>
       <article class="show">
-        <a class="device" href="https://lab-psikologi-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live Web Laboratorium Psikologi">
-          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>lab-psikologi-naufal.vercel.app</span></span>
-          <span class="screen"><img src="p-lab.webp" alt="Halaman Masukan website Laboratorium Psikologi dengan formulir kritik dan saran" loading="lazy"><span class="open">Buka demo live ↗</span></span>
+        <a class="device" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live Dapur Bunda Bahagia">
+          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>dapur-bunda-naufal.vercel.app</span></span>
+          <span class="screen"><img src="p-dapur.webp" alt="Halaman menu Dapur Bunda Bahagia dengan kartu makanan, harga, stok, dan tombol Tambah ke Keranjang" loading="lazy"><span class="open">Buka demo live ↗</span></span>
         </a>
         <div class="sinfo">
-          <span class="no">03 · Proyek tim · Laravel</span>
-          <h3>Web Laboratorium Psikologi Gunadarma</h3>
-          <p>CMS untuk website Laboratorium Psikologi Universitas Gunadarma, dikembangkan bersama tim programmer lab. Admin mengelola profil lab, pengumuman, galeri, penilaian, FAQ, dan masukan praktikan dari satu dashboard.</p>
+          <span class="no">03 · Full-stack · Web app</span>
+          <h3>Dapur Bunda Bahagia · Pemesanan Katering</h3>
+          <p>Website pemesanan katering dengan menu per kategori, keranjang belanja, dan stok yang berkurang otomatis saat pesanan masuk. Pemilik usaha mengelola semuanya dari <b>panel admin</b>.</p>
           <ul class="facts">
-            <li>Kontribusi saya: halaman Masukan untuk kritik dan saran praktikan (tampak di gambar), jadwal praktikum per region, seeder data, dan perbaikan bug</li>
-            <li>Halaman publik untuk lab Dasar, Menengah, dan Lanjut; login admin dengan OTP</li>
-            <li>Demo live memakai data contoh dan mode demo (perubahan tidak disimpan); kode milik lab tidak dipublikasikan</li>
+            <li>Panel admin: tambah, ubah, dan hapus produk dengan unggah foto, atur stok, selesaikan pesanan, dan lihat laporan penjualan</li>
+            <li>REST API Express untuk produk, pesanan, stok, dan laporan dengan database MySQL</li>
+            <li>Versi online berjalan dalam mode demo: data disimpan sementara di memori, sedangkan ubah produk dinonaktifkan</li>
           </ul>
-          <div class="langs"><span style="--lc:#E2552D">Laravel 11</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#16C0B0">Tailwind CSS</span><span style="--lc:#0E7490">MySQL</span></div>
-          <div class="sbtns"><a class="btn dark sm" href="https://lab-psikologi-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://lab-psikologi-naufal.vercel.app/login" target="_blank" rel="noopener">Coba panel admin ↗</a></div>
-          <p class="rel">Login admin demo: <b>demo@labpsikologi.test</b> / <b>demo12345</b></p>
+          <div class="langs"><span style="--lc:#18A058">Node.js</span><span style="--lc:#0F1A3A">Express</span><span style="--lc:#C0392B">MySQL</span><span style="--lc:#E2552D">HTML · CSS · JS</span></div>
+          <div class="sbtns"><a class="btn dark sm" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://dapur-bunda-naufal.vercel.app/admin.html" target="_blank" rel="noopener">Coba panel admin ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/dapur-bunda-bahagia" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
         </div>
       </article>
     </div>
 
     <div class="live-head"><h3>Website Live Lainnya</h3><p>Tampilan depan semua website yang pernah saya buat. Klik gambarnya untuk membuka situsnya.</p></div>
     <div class="lgrid">
-      <article class="lc" style="--lcol:#16C0B0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">chemicai-naufal.vercel.app</span></div><a class="lc-shot" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs ChemicAI"><img src="w-chemicai.webp" alt="Tampilan depan ChemicAI" loading="lazy"><span class="go">Buka situs ↗</span></a>
-        <div class="lc-body"><h4>ChemicAI</h4><p>Aplikasi web AI untuk menghasilkan dan menganalisis molekul kimia, lengkap dengan login dan riwayat generasi. Proyek capstone tim.</p>
-        <div class="langs"><span style="--lc:#0EA5A4">React</span><span style="--lc:#18A058">FastAPI</span><span style="--lc:#0F1A3A">AI</span></div>
-        <div class="lc-links"><a class="btn sm dark" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/chemicai-capstone" target="_blank" rel="noopener">Kode</a></div></div></article>
+      <article class="lc" style="--lcol:#6D5BD0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">lab-psikologi-naufal.vercel.app</span></div><a class="lc-shot" href="https://lab-psikologi-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Web Laboratorium Psikologi Gunadarma"><img src="w-lab.webp" alt="Halaman Masukan website Laboratorium Psikologi Gunadarma" loading="lazy"><span class="go">Buka situs ↗</span></a>
+        <div class="lc-body"><h4>Web Laboratorium Psikologi Gunadarma</h4><p>CMS lab yang saya kembangkan bersama tim programmer: halaman Masukan, jadwal praktikum per region, seeder data, dan perbaikan bug. Login admin demo: demo@labpsikologi.test / demo12345.</p>
+        <div class="langs"><span style="--lc:#E2552D">Laravel 11</span><span style="--lc:#16C0B0">Tailwind</span><span style="--lc:#0E7490">MySQL</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://lab-psikologi-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://lab-psikologi-naufal.vercel.app/login" target="_blank" rel="noopener">Admin</a></div></div></article>
+      <article class="lc" style="--lcol:#2148D8"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">crud-nama-kota-naufal.vercel.app</span></div><a class="lc-shot" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Aplikasi CRUD Nama dan Kota"><img src="w-crud.webp" alt="Tampilan aplikasi CRUD Nama dan Kota Asal" loading="lazy"><span class="go">Buka situs ↗</span></a>
+        <div class="lc-body"><h4>Aplikasi CRUD Nama dan Kota</h4><p>Tambah, ubah, hapus, dan urutkan data nama dan kota asal. Setiap operasi punya endpoint PHP sendiri dengan MySQL.</p>
+        <div class="langs"><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#0E7490">MySQL</span></div>
+        <div class="lc-links"><a class="btn sm dark" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Kode</a></div></div></article>
       <article class="lc" style="--lcol:#E5246E"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">luna-run-games.vercel.app</span></div><a class="lc-shot" href="https://luna-run-games.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Luna Run &amp; Mini Games"><img src="w-luna.webp" alt="Tampilan depan Luna Run &amp; Mini Games" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Luna Run &amp; Mini Games</h4><p>Game Luna Run (kabur dari alien), Jagoan Cibinong, Solver Rubik 3x3, dan Botol Minum 3D.</p>
         <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#0F1A3A">Canvas</span></div>
@@ -763,10 +767,6 @@ tr.dt p{margin:0 0 6px}
         <div class="lc-body"><h4>Kumpulan Tugas Web</h4><p>14 latihan dari kuliah dan Dicoding: notes app, biodata, layout, dan workshop JavaScript.</p>
         <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://kumpulan-tugas-web.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/kumpulan-tugas-web" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#C0392B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">dapur-bunda-naufal.vercel.app</span></div><a class="lc-shot" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Dapur Bunda Bahagia"><img src="w-dapur.webp" alt="Tampilan depan Dapur Bunda Bahagia" loading="lazy"><span class="go">Buka situs ↗</span></a>
-        <div class="lc-body"><h4>Dapur Bunda Bahagia</h4><p>Website pemesanan katering dengan panel admin untuk stok, pesanan, dan laporan penjualan. Versi online berjalan dalam mode demo.</p>
-        <div class="langs"><span style="--lc:#18A058">Express</span><span style="--lc:#C0392B">MySQL</span></div>
-        <div class="lc-links"><a class="btn sm dark" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://dapur-bunda-naufal.vercel.app/admin.html" target="_blank" rel="noopener">Admin</a><a class="btn sm" href="https://github.com/naufalfadillahh/dapur-bunda-bahagia" target="_blank" rel="noopener">Kode</a></div></div></article>
       <article class="lc" style="--lcol:#6D5BD0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div><div class="lc-shot ph" aria-hidden="true"><span class="ph-t">CRUD App CodeIgniter</span><span class="ph-s">Kode sumber di GitHub</span></div>
         <div class="lc-body"><h4>CRUD App CodeIgniter</h4><p>Aplikasi CRUD dengan framework CodeIgniter 4 dan database MySQL.</p>
         <div class="langs"><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#E0532F">CodeIgniter 4</span></div>
