@@ -708,6 +708,23 @@ tr.dt p{margin:0 0 6px}
           <div class="sbtns"><a class="btn dark sm" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
         </div>
       </article>
+      <article class="show">
+        <div class="device" role="img" aria-label="Tangkapan layar halaman Masukan website Laboratorium Psikologi Gunadarma">
+          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>lab-psikologi / masukan</span></span>
+          <span class="screen"><img src="p-lab.webp" alt="Halaman Masukan website Laboratorium Psikologi dengan formulir kritik dan saran" loading="lazy"></span>
+        </div>
+        <div class="sinfo">
+          <span class="no">03 · Proyek tim · Laravel</span>
+          <h3>Web Laboratorium Psikologi Gunadarma</h3>
+          <p>CMS untuk website Laboratorium Psikologi Universitas Gunadarma, dikembangkan bersama tim programmer lab. Admin mengelola profil lab, pengumuman, galeri, penilaian, FAQ, dan masukan praktikan dari satu dashboard.</p>
+          <ul class="facts">
+            <li>Kontribusi saya: halaman Masukan untuk kritik dan saran praktikan (tampak di gambar), jadwal praktikum per region, seeder data, dan perbaikan bug</li>
+            <li>Halaman publik untuk lab Dasar, Menengah, dan Lanjut; login admin dengan OTP</li>
+            <li>Kode milik lab dan tidak dipublikasikan</li>
+          </ul>
+          <div class="langs"><span style="--lc:#E2552D">Laravel 11</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#16C0B0">Tailwind CSS</span><span style="--lc:#0E7490">MySQL</span></div>
+        </div>
+      </article>
     </div>
 
     <div class="live-head"><h3>Website Live Lainnya</h3><p>Tampilan depan semua website yang pernah saya buat. Klik gambarnya untuk membuka situsnya.</p></div>
@@ -977,7 +994,7 @@ tr.dt p{margin:0 0 6px}
   /* ---------- CV ---------- */
   var CVJ=[['System Analyst · Anara Trisakti Medika','Sep 2026 – Sekarang','j-anara',1],['Programmer · Lab Psikologi Gunadarma','Sep 2024 – Agu 2026','j-lab',1],['Team Recruitment · Lab Psikologi Gunadarma','Mar 2025 – Agu 2026','j-lab',1],['IT Support Technician · SMK Wijaya Kusuma','Jan 2023 – Des 2025','j-it',1],['AI Front-End Developer · IDCamp Indosat Ooredoo Hutchison','Sep 2025 – Feb 2026','j-idcamp',1],['Front-End & Back-End with AI · Asah led by Dicoding','Agu 2025 – Jan 2026','j-asah',1],['Business Owner · Rex Parfume','Agu 2024 – Jan 2026','j-rexp',0],['Business Owner · Rex Store','Jun 2024 – Nov 2024','j-rexs',0],['Warehouse Staff · J&T Cargo','Mar 2024 – Mei 2024','j-jnt',0]];
   CVJ.forEach(function(j){var b=document.createElement('button');b.type='button';b.className='d-item'+(j[3]?'':' more');b.innerHTML='<b>'+esc(j[0])+'</b><span class="d">'+j[1]+'</span>';b.onclick=function(){jump(j[2])};$('#dJobs').appendChild(b)});
-  [['Klasifikasi Sel Karsinoma Skuamosa dengan CNN Berbasis Web','Jul 2025','Python · CNN · aplikasi web'],['Aplikasi CRUD Nama dan Kota','Jan 2025','HTML · JavaScript · PHP · MySQL']].forEach(function(p,k){var b=document.createElement('button');b.type='button';b.className='d-item'+(k?' more':'');b.innerHTML='<b>'+esc(p[0])+'</b><span class="d">'+p[1]+'</span><span class="o">'+esc(p[2])+'</span>';b.onclick=function(){go('proyek')};$('#dProj').appendChild(b)});
+  [['Klasifikasi Sel Karsinoma Skuamosa dengan CNN Berbasis Web','Jul 2025','Python · CNN · aplikasi web'],['Aplikasi CRUD Nama dan Kota','Jan 2025','HTML · JavaScript · PHP · MySQL'],['Web Laboratorium Psikologi Gunadarma','Des 2025','Laravel 11 · Tailwind · MySQL · proyek tim']].forEach(function(p,k){var b=document.createElement('button');b.type='button';b.className='d-item'+(k?' more':'');b.innerHTML='<b>'+esc(p[0])+'</b><span class="d">'+p[1]+'</span><span class="o">'+esc(p[2])+'</span>';b.onclick=function(){go('proyek')};$('#dProj').appendChild(b)});
   var top=[0,3,4,12,13,22];top.forEach(function(i,k){var c=certs[i],b=document.createElement('button');b.type='button';b.className='d-item'+(k>=3?' more':'');b.innerHTML='<b></b><span class="d"></span>';b.querySelector('b').textContent=c.title;b.querySelector('.d').textContent=ISS[c.iss].name+' · '+c.date;b.onclick=function(){open(top.map(function(x){return certItem(certs[x])}),k)};$('#dCerts').appendChild(b)});
   var doc=$('#doc');function mode(f){doc.classList.toggle('ringkas',!f);$('#mShort').setAttribute('aria-pressed',!f);$('#mFull').setAttribute('aria-pressed',f)}
   $('#mShort').onclick=function(){mode(false)};$('#mFull').onclick=function(){mode(true)};
