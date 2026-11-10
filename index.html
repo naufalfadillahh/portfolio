@@ -248,6 +248,14 @@ h1,h2,h3,h4{margin:0;line-height:1.1;text-wrap:balance}
 .lc-body{display:flex;flex-direction:column;gap:10px;padding:16px;flex:1}
 .lc-body h4{font:800 17px/1.3 var(--sans);color:var(--navy)}
 .lc-body p{margin:0;font-size:14px;color:var(--ink-2);line-height:1.55}
+.lc-shot{position:relative;display:block;aspect-ratio:5/3;max-width:100%;overflow:hidden;background:#E9ECF3;border-bottom:1px solid var(--line)}
+.lc-shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.lc:hover .lc-shot img{transform:scale(1.05)}
+.lc-shot .go{position:absolute;right:10px;bottom:10px;font:700 12px/1 var(--sans);background:var(--hl);color:var(--navy);padding:8px 11px;border-radius:999px;opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+.lc:hover .lc-shot .go,.lc-shot:focus-visible .go{opacity:1;transform:none}
+.lc-shot.ph{display:grid;place-content:center;gap:8px;text-align:center;background:linear-gradient(135deg,var(--lcol),#0F1A3A);color:#fff;padding:20px}
+.lc-shot.ph .ph-t{font:800 20px/1.2 var(--wide)}
+.lc-shot.ph .ph-s{font:500 12px/1 var(--mono);opacity:.8}
 .lc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:4px}
 
 /* ---------- CERTIFICATES ---------- */
@@ -464,6 +472,33 @@ tr.dt p{margin:0 0 6px}
 }
 @media (min-width:861px){.loc2{display:none}}
 
+/* ---------- Project showcase ---------- */
+.showcase{display:grid;gap:56px}
+.show{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:44px;align-items:center}
+.show.rev .device{order:2}
+.device{display:block;text-decoration:none;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 30px 60px -28px rgba(15,26,58,.55),0 0 0 1px rgba(15,26,58,.08);transform:perspective(1400px) rotateY(var(--ry,-6deg)) rotateX(var(--rx,2deg));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.show.rev .device{--ry:6deg}
+.device:hover{--ry:0deg;--rx:0deg;box-shadow:0 40px 80px -30px rgba(15,26,58,.6),0 0 0 1px rgba(15,26,58,.1)}
+.chrome{display:flex;align-items:center;gap:12px;padding:11px 14px;background:#EEF0F5;border-bottom:1px solid var(--line)}
+.addr{flex:1;min-width:0;display:flex;align-items:center;gap:7px;background:#fff;border-radius:999px;padding:6px 12px;font:500 12.5px/1 var(--mono);color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.addr svg{width:12px;height:12px;flex:none;fill:none;stroke:#18A058;stroke-width:2.4}
+.screen{position:relative;display:block;aspect-ratio:16/10;max-width:100%;overflow:hidden;background:#0F1A3A}
+.screen img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.device:hover .screen img{transform:scale(1.03)}
+.screen .open{position:absolute;right:14px;bottom:14px;font:700 13px/1 var(--sans);background:var(--hl);color:var(--navy);padding:10px 14px;border-radius:999px;box-shadow:0 10px 20px -8px rgba(0,0,0,.4);transform:translateY(8px);opacity:0;transition:opacity .25s,transform .25s}
+.device:hover .open,.device:focus-visible .open{opacity:1;transform:none}
+.sinfo .no{font:700 12px/1 var(--mono);letter-spacing:.08em;color:var(--blue);text-transform:uppercase}
+.sinfo h3{font:800 clamp(24px,2.6vw,32px)/1.15 var(--sans);color:var(--navy);margin-top:10px}
+.sinfo>p{color:var(--ink-2);margin:12px 0 0}
+.facts{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:14.5px;color:var(--ink-2)}
+.facts li{display:flex;gap:10px}
+.facts li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--blue);flex:none;margin-top:8px}
+.sinfo .langs{margin-top:16px}
+.sbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.rel{font-size:13px;color:var(--muted);margin:14px 0 0}
+.rel a{color:var(--blue)}
+@media (max-width:900px){.show{grid-template-columns:1fr;gap:22px}.show.rev .device{order:0}.device{--ry:0deg!important;--rx:0deg}}
+
 /* ---------- Responsive ---------- */
 @media (max-width:1000px){
   .nav,.hd-cta{display:none}
@@ -636,80 +671,88 @@ tr.dt p{margin:0 0 6px}
 <!-- ================= PROJECTS ================= -->
 <section class="slide gut" id="proyek" style="background:linear-gradient(160deg,#E4F4F3 0%,#EEF0FB 55%,#F7E9F1 100%)">
   <div class="wrap reveal">
-    <div class="s-head"><span class="kicker">Dari GitHub saya</span><h2><span class="block">Proyek</span></h2><p class="sub">Repositori publik di github.com/naufalfadillahh.</p></div>
-    <div class="projects">
-      <article class="win proj">
-        <div class="win-bar"><h3>Klasifikasi Sel Karsinoma Skuamosa (CNN)</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-        <div class="win-body">
-          <div class="meta"><span>Public</span><span id="pDate">Diperbarui 25 Jul 2025</span></div>
-          <p>Aplikasi web yang mengklasifikasikan citra sel rongga mulut menjadi karsinoma sel skuamosa atau sel normal menggunakan Convolutional Neural Network (CNN).</p>
-          <div class="rtabs" role="tablist" aria-label="Repositori terkait">
-            <button role="tab" type="button" aria-selected="true" data-r="0">sel_skuamosa</button>
-            <button role="tab" type="button" aria-selected="false" data-r="1">web_penulisan_ilmiah</button>
-            <button role="tab" type="button" aria-selected="false" data-r="2">kanker_mulut_using_cnn</button>
-          </div>
-          <div class="code" id="rFiles"></div>
-          <div class="langs" id="rLangs"></div>
-          <a class="btn sm dark" href="https://sel-skuamosa-naufal.vercel.app" target="_blank" rel="noopener" style="justify-self:start">Coba demo skripsi ↗</a>
-          <div class="foot"><span class="meta" id="rDesc"></span><a id="rLink" href="https://github.com/naufalfadillahh/sel_skuamosa" target="_blank" rel="noopener">Lihat repo ↗</a></div>
+    <div class="s-head"><span class="kicker">Dari GitHub saya</span><h2><span class="block">Proyek</span></h2><p class="sub">Tampilan asli aplikasi yang saya bangun. Klik layarnya untuk mencoba versi live.</p></div>
+    <div class="showcase">
+      <article class="show">
+        <a class="device" href="https://sel-skuamosa-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live Sistem Diagnosis Citra Medis">
+          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>sel-skuamosa-naufal.vercel.app</span></span>
+          <span class="screen"><img src="p-cnn.webp" alt="Tampilan aplikasi Sistem Diagnosis Citra Medis menampilkan hasil Sel Skuamosa Karsinoma" loading="lazy"><span class="open">Buka demo live ↗</span></span>
+        </a>
+        <div class="sinfo">
+          <span class="no">01 · Skripsi · AI</span>
+          <h3>Sistem Diagnosis Citra Medis</h3>
+          <p>Aplikasi web untuk mengklasifikasikan citra sel rongga mulut menjadi <b>sel skuamosa normal</b> atau <b>karsinoma sel skuamosa</b> dengan Convolutional Neural Network. Pengguna mengunggah citra JPG, lalu model memberi hasil diagnosis beserta rekomendasi.</p>
+          <ul class="facts">
+            <li>Citra diubah ke 224×224 piksel dan dinormalisasi sebelum diprediksi</li>
+            <li>Versi online memakai model TFLite (float16) agar muat di Vercel; hasilnya identik dengan model Keras pada 26 citra uji</li>
+          </ul>
+          <div class="langs"><span style="--lc:#3776AB">Python</span><span style="--lc:#0F1A3A">Flask</span><span style="--lc:#F59E0B">TensorFlow / TFLite</span><span style="--lc:#E2552D">HTML · CSS · JS</span></div>
+          <div class="sbtns"><a class="btn dark sm" href="https://sel-skuamosa-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/sel_skuamosa" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
+          <p class="rel">Repo terkait: <a href="https://github.com/naufalfadillahh/web_penulisan_ilmiah" target="_blank" rel="noopener">web_penulisan_ilmiah</a> · <a href="https://github.com/naufalfadillahh/kanker_mulut_using_cnn" target="_blank" rel="noopener">kanker_mulut_using_cnn</a></p>
         </div>
       </article>
-      <article class="win proj">
-        <div class="win-bar"><h3>Aplikasi CRUD Nama dan Kelas</h3><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-        <div class="win-body">
-          <div class="meta"><span>Public</span><span>Diperbarui 14 Jan 2025</span></div>
-          <p>Aplikasi web untuk menambah, menampilkan, mengubah, dan menghapus data nama dan kelas, dengan endpoint PHP terpisah per operasi, dijalankan di XAMPP.</p>
-          <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#F59E0B">XAMPP</span></div>
-          <div class="crud"><div><b>Create</b>save_data.php</div><div><b>Read</b>get_data.php</div><div><b>Update</b>update_data.php</div><div><b>Delete</b>delete_data.php</div></div>
-          <a class="btn sm dark" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener" style="justify-self:start">Coba demo ↗</a>
-          <div class="foot"><span></span><a href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Lihat repo ↗</a></div>
+      <article class="show rev">
+        <a class="device" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka demo live aplikasi CRUD Nama dan Kota">
+          <span class="chrome"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>crud-nama-kota-naufal.vercel.app</span></span>
+          <span class="screen"><img src="p-crud.webp" alt="Tampilan aplikasi CRUD Nama dan Kota Asal dengan formulir dan daftar pengguna" loading="lazy"><span class="open">Buka demo live ↗</span></span>
+        </a>
+        <div class="sinfo">
+          <span class="no">02 · Web app</span>
+          <h3>Aplikasi CRUD Nama dan Kota</h3>
+          <p>Aplikasi web untuk menambah, menampilkan, mengubah, menghapus, dan mengurutkan data nama dan kota asal. Setiap operasi punya endpoint PHP sendiri dengan database MySQL.</p>
+          <ul class="facts">
+            <li>Front-end HTML + JavaScript, back-end PHP + MySQL (XAMPP)</li>
+            <li>Versi online memakai API demo pengganti PHP, data disimpan sementara di memori</li>
+          </ul>
+          <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#C9A400">JavaScript</span><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#0E7490">MySQL</span></div>
+          <div class="sbtns"><a class="btn dark sm" href="https://crud-nama-kota-naufal.vercel.app" target="_blank" rel="noopener">Demo live ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/crud---nama-dan-kelas" target="_blank" rel="noopener">Kode di GitHub ↗</a></div>
         </div>
       </article>
     </div>
 
-    <div class="live-head"><h3>Website Live</h3><p>Semua website yang pernah saya buat, bisa dibuka langsung.</p></div>
+    <div class="live-head"><h3>Website Live Lainnya</h3><p>Tampilan depan semua website yang pernah saya buat. Klik gambarnya untuk membuka situsnya.</p></div>
     <div class="lgrid">
-      <article class="lc" style="--lcol:#16C0B0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">chemicai-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#16C0B0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">chemicai-naufal.vercel.app</span></div><a class="lc-shot" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs ChemicAI"><img src="w-chemicai.webp" alt="Tampilan depan ChemicAI" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>ChemicAI</h4><p>Aplikasi web AI untuk menghasilkan dan menganalisis molekul kimia, lengkap dengan login dan riwayat generasi. Proyek capstone tim.</p>
         <div class="langs"><span style="--lc:#0EA5A4">React</span><span style="--lc:#18A058">FastAPI</span><span style="--lc:#0F1A3A">AI</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://chemicai-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/chemicai-capstone" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#E5246E"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">luna-run-games.vercel.app</span></div>
+      <article class="lc" style="--lcol:#E5246E"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">luna-run-games.vercel.app</span></div><a class="lc-shot" href="https://luna-run-games.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Luna Run &amp; Mini Games"><img src="w-luna.webp" alt="Tampilan depan Luna Run &amp; Mini Games" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Luna Run &amp; Mini Games</h4><p>Game Luna Run (kabur dari alien), Jagoan Cibinong, Solver Rubik 3x3, dan Botol Minum 3D.</p>
         <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#0F1A3A">Canvas</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://luna-run-games.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/luna-run-games" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#2148D8"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">story-app-pwa.vercel.app</span></div>
+      <article class="lc" style="--lcol:#2148D8"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">story-app-pwa.vercel.app</span></div><a class="lc-shot" href="https://story-app-pwa.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Story App (PWA)"><img src="w-story.webp" alt="Tampilan depan Story App (PWA)" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Story App (PWA)</h4><p>Aplikasi berbagi cerita dengan peta Leaflet, IndexedDB, dan mode offline. Submission Dicoding.</p>
         <div class="langs"><span style="--lc:#6D5BD0">Vite</span><span style="--lc:#18A058">Leaflet</span><span style="--lc:#0EA5A4">PWA</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://story-app-pwa.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/story-app-pwa" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#F2B33D"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">notes-app-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#F2B33D"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">notes-app-naufal.vercel.app</span></div><a class="lc-shot" href="https://notes-app-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Notes App"><img src="w-notes.webp" alt="Tampilan depan Notes App" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Notes App</h4><p>Aplikasi catatan dengan Web Components dan Webpack, terhubung ke Dicoding Notes API.</p>
         <div class="langs"><span style="--lc:#E8B90F">JavaScript</span><span style="--lc:#2148D8">Webpack</span><span style="--lc:#E0532F">REST API</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://notes-app-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/notes-app-final" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#18A058"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">bookshelf-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#18A058"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">bookshelf-naufal.vercel.app</span></div><a class="lc-shot" href="https://bookshelf-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Bookshelf App"><img src="w-bookshelf.webp" alt="Tampilan depan Bookshelf App" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Bookshelf App</h4><p>Rak buku digital: tambah, cari, pindahkan, dan hapus buku dengan localStorage. Submission Dicoding.</p>
         <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://bookshelf-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/bookshelf-app" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#0EA5A4"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">user-management-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#0EA5A4"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">user-management-naufal.vercel.app</span></div><div class="lc-shot ph" aria-hidden="true"><span class="ph-t">User Management</span><span class="ph-s">Pratinjau belum tersedia</span></div>
         <div class="lc-body"><h4>User Management</h4><p>Aplikasi manajemen pengguna dengan React Router. Tugas Praktikum Pemrograman Web.</p>
         <div class="langs"><span style="--lc:#0EA5A4">React</span><span style="--lc:#6D5BD0">Vite</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://user-management-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/user-management-react" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#E0532F"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">rumah-sakit-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#E0532F"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">rumah-sakit-naufal.vercel.app</span></div><a class="lc-shot" href="https://rumah-sakit-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Website Rumah Sakit"><img src="w-rs.webp" alt="Tampilan depan Website Rumah Sakit" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Website Rumah Sakit</h4><p>Situs rumah sakit dengan halaman dokter, perawatan, dan kontak, plus panel admin PHP.</p>
         <div class="langs"><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#2148D8">Bootstrap</span><span style="--lc:#C0392B">MySQL</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://rumah-sakit-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/rumah-sakit-web" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#0B2A6B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">kumpulan-tugas-web.vercel.app</span></div>
+      <article class="lc" style="--lcol:#0B2A6B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">kumpulan-tugas-web.vercel.app</span></div><a class="lc-shot" href="https://kumpulan-tugas-web.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Kumpulan Tugas Web"><img src="w-tugas.webp" alt="Tampilan depan Kumpulan Tugas Web" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Kumpulan Tugas Web</h4><p>14 latihan dari kuliah dan Dicoding: notes app, biodata, layout, dan workshop JavaScript.</p>
         <div class="langs"><span style="--lc:#E2552D">HTML</span><span style="--lc:#E8B90F">JavaScript</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://kumpulan-tugas-web.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/kumpulan-tugas-web" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#C0392B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">dapur-bunda-naufal.vercel.app</span></div>
+      <article class="lc" style="--lcol:#C0392B"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">dapur-bunda-naufal.vercel.app</span></div><a class="lc-shot" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Dapur Bunda Bahagia"><img src="w-dapur.webp" alt="Tampilan depan Dapur Bunda Bahagia" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Dapur Bunda Bahagia</h4><p>Website pemesanan katering dengan panel admin untuk stok, pesanan, dan laporan penjualan. Versi online berjalan dalam mode demo.</p>
         <div class="langs"><span style="--lc:#18A058">Express</span><span style="--lc:#C0392B">MySQL</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://dapur-bunda-naufal.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://dapur-bunda-naufal.vercel.app/admin.html" target="_blank" rel="noopener">Admin</a><a class="btn sm" href="https://github.com/naufalfadillahh/dapur-bunda-bahagia" target="_blank" rel="noopener">Kode</a></div></div></article>
-      <article class="lc" style="--lcol:#6D5BD0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div>
+      <article class="lc" style="--lcol:#6D5BD0"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">github.com/naufalfadillahh</span></div><div class="lc-shot ph" aria-hidden="true"><span class="ph-t">CRUD App CodeIgniter</span><span class="ph-s">Kode sumber di GitHub</span></div>
         <div class="lc-body"><h4>CRUD App CodeIgniter</h4><p>Aplikasi CRUD dengan framework CodeIgniter 4 dan database MySQL.</p>
         <div class="langs"><span style="--lc:#6D5BD0">PHP</span><span style="--lc:#E0532F">CodeIgniter 4</span></div>
         <div class="lc-links"><a class="btn sm" href="https://github.com/naufalfadillahh/crud-app-codeigniter" target="_blank" rel="noopener">Lihat kode ↗</a></div></div></article>
-      <article class="lc" style="--lcol:#3776AB"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">flask-praktikum.vercel.app</span></div>
+      <article class="lc" style="--lcol:#3776AB"><div class="lc-top"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="lc-url">flask-praktikum.vercel.app</span></div><a class="lc-shot" href="https://flask-praktikum.vercel.app" target="_blank" rel="noopener" aria-label="Buka situs Flask Praktikum"><img src="w-flask.webp" alt="Tampilan depan Flask Praktikum" loading="lazy"><span class="go">Buka situs ↗</span></a>
         <div class="lc-body"><h4>Flask Praktikum</h4><p>Aplikasi Python Flask: biodata, game tebak angka dengan session, dan video player Praktikum Pemrograman Jaringan.</p>
         <div class="langs"><span style="--lc:#3776AB">Python</span><span style="--lc:#0F1A3A">Flask</span></div>
         <div class="lc-links"><a class="btn sm dark" href="https://flask-praktikum.vercel.app" target="_blank" rel="noopener">Buka situs ↗</a><a class="btn sm" href="https://github.com/naufalfadillahh/flask-praktikum" target="_blank" rel="noopener">Kode</a></div></div></article>
@@ -853,7 +896,7 @@ tr.dt p{margin:0 0 6px}
     {cat:'Pengembangan web',items:[
       {ab:'JS',bg:'#E8B90F',fg:'#0F1A3A',n:'JavaScript',d:'Membangun interaksi antarmuka web dan logika front-end maupun back-end pemula.',c:[4,32,30,26]},
       {ab:'</>',bg:'#E2552D',n:'HTML & CSS',d:'Menyusun struktur dan tampilan halaman web yang responsif.',c:[33,31,26,28]},
-      {ab:'PHP',bg:'#6D5BD0',n:'PHP',d:'Membuat endpoint CRUD untuk aplikasi web, seperti proyek Nama dan Kelas.',c:[],p:1},
+      {ab:'PHP',bg:'#6D5BD0',n:'PHP',d:'Membuat endpoint CRUD untuk aplikasi web, seperti proyek CRUD Nama dan Kota.',c:[],p:1},
       {ab:'FS',bg:'#2148D8',n:'Full-stack web',d:'Merancang dan mengimplementasikan aplikasi web dari desain hingga implementasi.',c:[3,5]}]},
     {cat:'AI & data',items:[
       {ab:'Py',bg:'#3776AB',n:'Python',d:'Membangun aplikasi web klasifikasi citra dan mengolah data.',c:[13],p:1},
@@ -915,16 +958,6 @@ tr.dt p{margin:0 0 6px}
       if(has){r.onclick=act}else r.style.cursor='default';
       tb.appendChild(r)})});
 
-  /* ---------- Projects ---------- */
-  var REPOS=[
-    {name:'sel_skuamosa',date:'25 Jul 2025',files:[['d','static/'],['d','templates/'],['f','app.py'],['f','app_penjelasan.py'],['f','app.log']],lang:[['Python','#3776AB'],['HTML','#E2552D'],['CNN','#0F1A3A']],desc:'Repositori utama · 1 commit'},
-    {name:'web_penulisan_ilmiah',date:'11 Jul 2025',files:[['d','static/'],['d','templates/'],['f','app.py'],['f','README.md'],['f','app.log']],lang:[['Python','#3776AB'],['HTML','#E2552D']],desc:'Versi untuk penulisan ilmiah'},
-    {name:'kanker_mulut_using_cnn',date:'15 Jul 2025',files:[],lang:[['CNN','#0F1A3A']],desc:'Repositori dengan topik yang sama'}];
-  function repo(k){var r=REPOS[k];$('#rFiles').innerHTML='<div class="c"># '+r.name+'</div>'+(r.files.length?r.files.map(function(f){return '<div class="'+f[0]+'">'+f[1]+'</div>'}).join(''):'<div class="c">— tidak ada file yang ditampilkan</div>');
-    $('#rLangs').innerHTML=r.lang.map(function(l){return '<span style="--lc:'+l[1]+'">'+l[0]+'</span>'}).join('');$('#rDesc').textContent=r.desc;$('#pDate').textContent='Diperbarui '+r.date;$('#rLink').href='https://github.com/naufalfadillahh/'+r.name;
-    $$('.rtabs button').forEach(function(b){b.setAttribute('aria-selected',+b.dataset.r===k)})}
-  $$('.rtabs button').forEach(function(b){b.onclick=function(){repo(+b.dataset.r)}});repo(0);
-
   /* ---------- Certificates ---------- */
   var grid=$('#certGrid'),cc=$('#certChips'),st={iss:'all',q:'',sort:'new'},vis=[],pool=certs.filter(function(c){return c.i!==1});
   [['all','Semua',36]].concat(Object.keys(ISS).map(function(k){return [k,ISS[k].name,pool.filter(function(c){return c.iss===k}).length]})).forEach(function(f){var b=document.createElement('button');b.type='button';b.className='chip';b.setAttribute('aria-pressed',f[0]==='all');
@@ -944,7 +977,7 @@ tr.dt p{margin:0 0 6px}
   /* ---------- CV ---------- */
   var CVJ=[['System Analyst · Anara Trisakti Medika','Sep 2026 – Sekarang','j-anara',1],['Programmer · Lab Psikologi Gunadarma','Sep 2024 – Agu 2026','j-lab',1],['Team Recruitment · Lab Psikologi Gunadarma','Mar 2025 – Agu 2026','j-lab',1],['IT Support Technician · SMK Wijaya Kusuma','Jan 2023 – Des 2025','j-it',1],['AI Front-End Developer · IDCamp Indosat Ooredoo Hutchison','Sep 2025 – Feb 2026','j-idcamp',1],['Front-End & Back-End with AI · Asah led by Dicoding','Agu 2025 – Jan 2026','j-asah',1],['Business Owner · Rex Parfume','Agu 2024 – Jan 2026','j-rexp',0],['Business Owner · Rex Store','Jun 2024 – Nov 2024','j-rexs',0],['Warehouse Staff · J&T Cargo','Mar 2024 – Mei 2024','j-jnt',0]];
   CVJ.forEach(function(j){var b=document.createElement('button');b.type='button';b.className='d-item'+(j[3]?'':' more');b.innerHTML='<b>'+esc(j[0])+'</b><span class="d">'+j[1]+'</span>';b.onclick=function(){jump(j[2])};$('#dJobs').appendChild(b)});
-  [['Klasifikasi Sel Karsinoma Skuamosa dengan CNN Berbasis Web','Jul 2025','Python · CNN · aplikasi web'],['Aplikasi CRUD Nama dan Kelas','Jan 2025','HTML · PHP · XAMPP']].forEach(function(p,k){var b=document.createElement('button');b.type='button';b.className='d-item'+(k?' more':'');b.innerHTML='<b>'+esc(p[0])+'</b><span class="d">'+p[1]+'</span><span class="o">'+esc(p[2])+'</span>';b.onclick=function(){go('proyek')};$('#dProj').appendChild(b)});
+  [['Klasifikasi Sel Karsinoma Skuamosa dengan CNN Berbasis Web','Jul 2025','Python · CNN · aplikasi web'],['Aplikasi CRUD Nama dan Kota','Jan 2025','HTML · JavaScript · PHP · MySQL']].forEach(function(p,k){var b=document.createElement('button');b.type='button';b.className='d-item'+(k?' more':'');b.innerHTML='<b>'+esc(p[0])+'</b><span class="d">'+p[1]+'</span><span class="o">'+esc(p[2])+'</span>';b.onclick=function(){go('proyek')};$('#dProj').appendChild(b)});
   var top=[0,3,4,12,13,22];top.forEach(function(i,k){var c=certs[i],b=document.createElement('button');b.type='button';b.className='d-item'+(k>=3?' more':'');b.innerHTML='<b></b><span class="d"></span>';b.querySelector('b').textContent=c.title;b.querySelector('.d').textContent=ISS[c.iss].name+' · '+c.date;b.onclick=function(){open(top.map(function(x){return certItem(certs[x])}),k)};$('#dCerts').appendChild(b)});
   var doc=$('#doc');function mode(f){doc.classList.toggle('ringkas',!f);$('#mShort').setAttribute('aria-pressed',!f);$('#mFull').setAttribute('aria-pressed',f)}
   $('#mShort').onclick=function(){mode(false)};$('#mFull').onclick=function(){mode(true)};
@@ -979,7 +1012,7 @@ tr.dt p{margin:0 0 6px}
     function stagger(sel){$$(sel).forEach(function(group){var kids=[].slice.call(group.children);if(group.getBoundingClientRect().top<innerHeight*.9)return;
       kids.forEach(function(k,n){k.classList.add('st','pre');k.style.setProperty('--k',Math.min(n,10))});
       var o=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){kids.forEach(function(k){k.classList.remove('pre')});o.disconnect()}})},{rootMargin:'0px 0px -10% 0px'});o.observe(group)})}
-    stagger('#expBody');stagger('#toolBody');stagger('.stats');stagger('.c-list');stagger('.links');stagger('.projects');
+    stagger('#expBody');stagger('#toolBody');stagger('.stats');stagger('.c-list');stagger('.links');stagger('.showcase');stagger('.lgrid');
     /* re-stagger certificate grid whenever it is redrawn */
     var grid=$('#certGrid');new MutationObserver(function(){var kids=[].slice.call(grid.children);kids.forEach(function(k,n){k.classList.add('st','pre');k.style.setProperty('--k',Math.min(n,12))});requestAnimationFrame(function(){requestAnimationFrame(function(){kids.forEach(function(k){k.classList.remove('pre')})})})}).observe(grid,{childList:true});
     if(!fine)return;
