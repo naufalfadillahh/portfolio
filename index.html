@@ -564,6 +564,18 @@ tr.dt p{margin:0 0 6px}
 :root[data-theme="dark"] .lk:hover{background:rgba(7,11,24,.75)}
 :root[data-theme="dark"] .lk .ic{background:var(--hl);color:#0F1A3A}
 :root[data-theme="dark"] .contact .pill-btn:not(.y){background:rgba(7,11,24,.5);border-color:rgba(255,255,255,.55)}
+/* Hero bawah: ikut tema */
+.hero-foot .hero-tag{display:inline-block;padding:10px 20px;border-radius:999px;transition:background .3s,color .3s}
+:root:not([data-theme="dark"]) .hero-foot .hero-tag{background:rgba(255,255,255,.92);color:#0F1A3A;box-shadow:0 10px 26px -14px rgba(7,20,51,.6)}
+:root:not([data-theme="dark"]) .hero-foot .pill-btn:not(.y){background:#fff;color:#0F1A3A;border-color:#fff}
+:root:not([data-theme="dark"]) .hero-foot .pill-btn:not(.y):hover{background:#EAF1FF}
+:root[data-theme="dark"] .hero-foot .hero-tag{background:rgba(7,11,24,.6);color:#fff;border:1px solid rgba(255,255,255,.14)}
+:root[data-theme="dark"] .hero-foot .pill-btn:not(.y){background:rgba(7,11,24,.55);border-color:rgba(255,255,255,.5)}
+@media (max-width:700px){.hero-foot .hero-tag{letter-spacing:.2em;padding:8px 14px}}
+/* Tulisan PORTOFOLIO melingkar: ikut tema */
+.ring-text text{transition:fill .3s}
+:root:not([data-theme="dark"]) .ring-text text{fill:#0F1A3A;filter:drop-shadow(0 2px 0 rgba(255,255,255,.55)) drop-shadow(0 8px 14px rgba(7,20,51,.25))}
+:root[data-theme="dark"] .ring-text text{fill:#fff}
 :root[data-theme="dark"] .tbl thead th{background:#1B2547}
 :root[data-theme="dark"] tr.r[data-open="true"] .tog,:root[data-theme="dark"] .ex[data-open="true"] .plus{background:var(--hl);color:#0F1A3A}
 :root[data-theme="dark"] .ev-btn:hover,:root[data-theme="dark"] .chip:hover{background:var(--surf3);color:var(--head)}
