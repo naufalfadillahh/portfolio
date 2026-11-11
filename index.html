@@ -435,8 +435,9 @@ footer button:focus-visible{outline:2px solid var(--hl)}
 .mag{transition:transform .25s cubic-bezier(.2,.7,.2,1),background .15s,color .15s}
 /* shine on window cards */
 .win{position:relative}
-.win::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 45%,transparent 60%);transform:translateX(-120%);border-radius:inherit}
-.win:hover::after{transform:translateX(120%);transition:transform .9s ease}
+.win::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.45) 50%,transparent 58%) no-repeat;background-size:250% 100%;background-position:150% 0}
+.win:hover::after{background-position:-50% 0;transition:background-position .9s ease}
+:root[data-theme="dark"] .win::after{background-image:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.08) 50%,transparent 58%)}
 .proj .win-body,.about-card .win-body{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){.block.wipe{clip-path:none}.kicker.kslide{opacity:1;transform:none}.st.pre{opacity:1;transform:none}}
 
