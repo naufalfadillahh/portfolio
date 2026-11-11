@@ -577,7 +577,7 @@ html{transition:background-color .3s}
 <body>
 
 <!-- ================= HEADER ================= -->
-<script>(function(){var t;try{t=localStorage.getItem('nf-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)})();</script>
+<script>(function(){var t;try{t=localStorage.getItem('nf-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t='dark'}document.documentElement.setAttribute('data-theme',t)})();</script>
 
 <div class="progress" id="progress" aria-hidden="true"></div>
 <header class="header gut" id="header">
@@ -1118,7 +1118,6 @@ html{transition:background-color .3s}
   set(root.getAttribute('data-theme')||'light');
   btn.addEventListener('click',function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark',true)});
   window.__setThemeLabel=function(){set(root.getAttribute('data-theme'))};
-  try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',function(e){var s;try{s=localStorage.getItem('nf-theme')}catch(x){}if(!s)set(e.matches?'dark':'light')})}catch(e){}
 })();
 </script>
 <script>
@@ -1162,7 +1161,7 @@ html{transition:background-color .3s}
     if(save){try{localStorage.setItem('nf-lang',l)}catch(e){}}}
   function mark(){[].forEach.call(btn.querySelectorAll('b'),function(b){b.classList.toggle('on',b.dataset.l===lang)});btn.setAttribute('aria-label',lang==='en'?'Switch language to Bahasa Indonesia':'Ganti bahasa ke English')}
   var init='id',q=(location.search.match(/[?&]lang=(en|id)/)||[])[1],st;try{st=localStorage.getItem('nf-lang')}catch(e){}
-  if(q)init=q;else if(st==='en'||st==='id')init=st;else if(!/^id\b|^ms\b/i.test(navigator.language||'id'))init='en';
+  if(q)init=q;else if(st==='en'||st==='id')init=st;
   btn.addEventListener('click',function(){set(lang==='en'?'id':'en',true)});
   window.__lang=function(){return lang};
   set(init);
