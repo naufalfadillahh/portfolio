@@ -552,6 +552,18 @@ tr.dt p{margin:0 0 6px}
 :root[data-theme="dark"] .btn:hover{background:var(--hl);border-color:var(--hl);color:#0F1A3A}
 :root[data-theme="dark"] .block{background:#2B3C7A}
 :root[data-theme="dark"] .contact .block{background:#0B1022;color:#fff;box-shadow:0 10px 30px -12px rgba(0,0,0,.6)}
+/* Kontak: tema terang = kartu putih solid, tema gelap = kaca gelap */
+:root:not([data-theme="dark"]) .lk{background:#fff;color:#0F1A3A;border-color:rgba(255,255,255,.9);box-shadow:0 12px 28px -16px rgba(7,20,51,.55)}
+:root:not([data-theme="dark"]) .lk:hover{background:#F3F7FF}
+:root:not([data-theme="dark"]) .lk .ic{background:linear-gradient(135deg,#2160DE,#22C3D6);color:#fff}
+:root:not([data-theme="dark"]) .lk span{opacity:1}
+:root:not([data-theme="dark"]) .lk .ic+span>span{color:#4B5878}
+:root:not([data-theme="dark"]) .contact .pill-btn:not(.y){background:#fff;color:#0F1A3A;border-color:#fff}
+:root:not([data-theme="dark"]) .contact .mail{color:#fff}
+:root[data-theme="dark"] .lk{background:rgba(7,11,24,.55);border-color:rgba(255,255,255,.12)}
+:root[data-theme="dark"] .lk:hover{background:rgba(7,11,24,.75)}
+:root[data-theme="dark"] .lk .ic{background:var(--hl);color:#0F1A3A}
+:root[data-theme="dark"] .contact .pill-btn:not(.y){background:rgba(7,11,24,.5);border-color:rgba(255,255,255,.55)}
 :root[data-theme="dark"] .tbl thead th{background:#1B2547}
 :root[data-theme="dark"] tr.r[data-open="true"] .tog,:root[data-theme="dark"] .ex[data-open="true"] .plus{background:var(--hl);color:#0F1A3A}
 :root[data-theme="dark"] .ev-btn:hover,:root[data-theme="dark"] .chip:hover{background:var(--surf3);color:var(--head)}
